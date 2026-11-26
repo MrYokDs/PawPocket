@@ -116,55 +116,30 @@ export default function PastelDatePicker({
     setIsOpen(false);
   };
 
-  const handleStepDay = (delta: number) => {
-    const nextDate = dayjs(value).add(delta, 'day').format('YYYY-MM-DD');
-    onChange(nextDate);
-  };
-
   return (
     <div ref={containerRef} className="relative w-full">
-      {/* แถบปุ่มเลือกวันที่ (ไม่ล้นกรอบบน iOS/Android) */}
-      <div className="flex w-full items-center gap-1.5">
-        <button
-          type="button"
-          onClick={() => handleStepDay(-1)}
-          className="flex h-11 w-10 flex-shrink-0 items-center justify-center rounded-2xl border border-pink-200 bg-pink-50/50 text-pink-500 transition hover:bg-pink-100 active:scale-95"
-          aria-label="วันก่อนหน้า"
-        >
-          <ChevronLeft className="h-4 w-4" />
-        </button>
-
-        <button
-          id={id}
-          type="button"
-          onClick={() => setIsOpen((prev) => !prev)}
-          aria-expanded={isOpen}
-          className={`flex h-11 min-w-0 flex-1 items-center justify-between gap-2 rounded-2xl border px-3.5 text-sm font-semibold text-[#4a2c3a] transition ${
-            isOpen
-              ? 'border-pink-400 bg-white ring-2 ring-pink-200'
-              : 'border-pink-200 bg-pink-50/40 hover:border-pink-300 hover:bg-white'
+      {/* ปุ่มเลือกวันที่เต็มความกว้าง (ไม่ล้นกรอบบน iOS/Android) */}
+      <button
+        id={id}
+        type="button"
+        onClick={() => setIsOpen((prev) => !prev)}
+        aria-expanded={isOpen}
+        className={`flex h-11 w-full items-center justify-between gap-2 rounded-2xl border px-3.5 text-sm font-semibold text-[#4a2c3a] outline-none transition ${
+          isOpen
+            ? 'border-pink-400 bg-white ring-2 ring-pink-200'
+            : 'border-pink-200 bg-pink-50/40 hover:border-pink-300 hover:bg-white'
+        }`}
+      >
+        <span className="flex min-w-0 items-center gap-2 truncate">
+          <Calendar className="h-4 w-4 flex-shrink-0 text-pink-500" />
+          <span className="truncate">{formatThaiShortDate(value)}</span>
+        </span>
+        <ChevronDown
+          className={`h-4 w-4 flex-shrink-0 text-pink-400 transition-transform ${
+            isOpen ? 'rotate-180' : ''
           }`}
-        >
-          <span className="flex min-w-0 items-center gap-2 truncate">
-            <Calendar className="h-4 w-4 flex-shrink-0 text-pink-500" />
-            <span className="truncate">{formatThaiShortDate(value)}</span>
-          </span>
-          <ChevronDown
-            className={`h-4 w-4 flex-shrink-0 text-pink-400 transition-transform ${
-              isOpen ? 'rotate-180' : ''
-            }`}
-          />
-        </button>
-
-        <button
-          type="button"
-          onClick={() => handleStepDay(1)}
-          className="flex h-11 w-10 flex-shrink-0 items-center justify-center rounded-2xl border border-pink-200 bg-pink-50/50 text-pink-500 transition hover:bg-pink-100 active:scale-95"
-          aria-label="วันถัดไป"
-        >
-          <ChevronRight className="h-4 w-4" />
-        </button>
-      </div>
+        />
+      </button>
 
       {/* ปฏิทินป๊อปอัพธีมชมพู-สายรุ้งพาสเทล */}
       {isOpen && (
@@ -273,3 +248,4 @@ export default function PastelDatePicker({
     </div>
   );
 }
+
