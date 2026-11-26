@@ -3,7 +3,7 @@ import Dashboard from '../pages/Dashboard';
 import { ROUTE_PATHS } from './paths';
 
 /**
- * กำหนดเส้นทาง (Routes) ทั้งหมดของแอปพลิเคชัน MeowIncome
+ * กำหนดเส้นทาง (Routes) ทั้งหมดของแอปพลิเคชัน PawPocket
  * @returns โครงสร้าง Routes ของ React Router
  */
 export default function AppRoutes() {

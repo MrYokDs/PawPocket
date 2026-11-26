@@ -1,9 +1,9 @@
 {
-  "name": "meow-income",
+  "name": "paw-pocket",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
-  "description": "MeowIncome — เว็บแอปบันทึกรายได้พิเศษรายวัน ธีมชมพู-สายรุ้ง-น้องแมว",
+  "description": "PawPocket — เว็บแอปบันทึกรายได้พิเศษรายวัน ธีมชมพู-สายรุ้ง-น้องแมว",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

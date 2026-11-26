@@ -149,7 +149,7 @@ export async function pushIncomesToGitHub(
   }
 
   const payload = {
-    app: 'MeowIncome',
+    app: 'PawPocket',
     updatedAt: new Date().toISOString(),
     entries,
   };
@@ -157,7 +157,7 @@ export async function pushIncomesToGitHub(
   const encodedContent = Base64.encode(jsonString);
 
   const body: Record<string, string> = {
-    message: `อัปเดตข้อมูลรายได้ MeowIncome (${Object.keys(entries).length} วัน)`,
+    message: `อัปเดตข้อมูลรายได้ PawPocket (${Object.keys(entries).length} วัน)`,
     content: encodedContent,
     branch: config.branch.trim(),
   };

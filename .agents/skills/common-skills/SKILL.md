@@ -1,9 +1,9 @@
 ---
 name: common-skills
-description: มาตรฐานการเขียนโค้ดของโปรเจกต์ MeowIncome ทั้งโครงสร้าง Modular Folder, การใช้ภาษาไทยใน JSDoc, ห้ามใช้ btoa/atob, และจำกัดความยาวไฟล์ไม่เกิน 500-600 บรรทัด
+description: มาตรฐานการเขียนโค้ดของโปรเจกต์ PawPocket ทั้งโครงสร้าง Modular Folder, การใช้ภาษาไทยใน JSDoc, ห้ามใช้ btoa/atob, และจำกัดความยาวไฟล์ไม่เกิน 500-600 บรรทัด
 ---
 
-# Common Skills — มาตรฐานการเขียนโค้ด MeowIncome
+# Common Skills — มาตรฐานการเขียนโค้ด PawPocket
 
 ## ข้อปฏิบัติหลัก
 1. **Check Before Create:** ตรวจสอบ `src/types/`, `src/components/`, และ `src/utils/` ก่อนสร้างไฟล์หรือฟังก์ชันใหม่ทุกครั้ง

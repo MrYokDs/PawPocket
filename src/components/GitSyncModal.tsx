@@ -170,7 +170,7 @@ export default function GitSyncModal({
                   type="text"
                   value={formState.repo}
                   onChange={(e) => handleFieldChange('repo', e.target.value)}
-                  placeholder="เช่น meow-income-data"
+                  placeholder="เช่น paw-pocket-data"
                   className="w-full rounded-xl border border-pink-200 bg-pink-50/30 px-3 py-2 text-sm text-[#4a2c3a] outline-none transition focus:border-pink-400 focus:bg-white focus:ring-2 focus:ring-pink-200"
                 />
               </div>

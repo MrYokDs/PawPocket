@@ -75,7 +75,7 @@ export default function CatMascot({
           viewBox="0 0 160 150"
           className="animate-cat-float h-28 w-28 drop-shadow-sm sm:h-32 sm:w-32"
           role="img"
-          aria-label="น้องแมว MeowIncome"
+          aria-label="น้องแมว PawPocket"
         >
           {/* สายรุ้งด้านหลังเมื่อได้เยอะกว่าค่าเฉลี่ย */}
           {mood === 'starry' && (

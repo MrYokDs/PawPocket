@@ -35,7 +35,7 @@ import MonthlyChartSection from './sections/MonthlyChartSection';
 import SummaryCards from './sections/SummaryCards';
 
 /**
- * หน้าแดชบอร์ดหลักของ MeowIncome รวมระบบกรอกสูตรรายได้ ปฏิทิน กราฟสีรุ้ง และ GitHub Sync
+ * หน้าแดชบอร์ดหลักของ PawPocket รวมระบบกรอกสูตรรายได้ ปฏิทิน กราฟสีรุ้ง และ GitHub Sync
  *
  * @returns คอมโพเนนต์หน้า Dashboard หลัก
  */
@@ -237,7 +237,7 @@ export default function Dashboard() {
             <div>
               <div className="flex items-center gap-1.5">
                 <h1 className="text-xl font-bold tracking-tight text-[#4a2c3a] sm:text-2xl">
-                  MeowIncome
+                  PawPocket
                 </h1>
                 <Sparkles className="h-4 w-4 text-amber-400" />
               </div>
@@ -319,7 +319,7 @@ export default function Dashboard() {
         <footer className="flex items-center justify-center gap-1.5 pt-2 text-xs text-[#9c7286]">
           <span>สร้างด้วย</span>
           <Heart className="h-3.5 w-3.5 fill-pink-400 text-pink-400" />
-          <span>MeowIncome • ข้อมูลบันทึกอัตโนมัติในเครื่องของคุณ</span>
+          <span>PawPocket • ข้อมูลบันทึกอัตโนมัติในเครื่องของคุณ</span>
         </footer>
       </div>
 

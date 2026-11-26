@@ -1,4 +1,4 @@
-# MeowIncome 🐱🌈💖
+# PawPocket 🐱🌈💖
 
 เว็บแอปพลิเคชันบันทึกรายได้พิเศษรายวันสไตล์น่ารักสดใส (Kawaii Pastel Pink & Rainbow) ใช้งานง่ายทั้งบนมือถือและคอมพิวเตอร์
 
@@ -33,7 +33,7 @@ npm run build
 
 1. ไปที่ GitHub → **Settings** → **Developer settings** → **Personal access tokens** → **Fine-grained tokens**
 2. กด **Generate new token**
-3. ตั้งชื่อ Token และเลือก **Only select repositories** โดยเลือก Repository ที่ใช้เก็บไฟล์ข้อมูล (เช่น `meow-income-data`)
+3. ตั้งชื่อ Token และเลือก **Only select repositories** โดยเลือก Repository ที่ใช้เก็บไฟล์ข้อมูล (เช่น `paw-pocket-data`)
 4. ในหัวข้อ **Repository permissions** ให้ตั้งค่า **Contents** เป็น **Read and write**
 5. กด **Generate token** แล้วคัดลอก Token มาวางในหน้าต่าง **GitHub Sync & สำรองข้อมูล** บนเว็บแอป
    - *ความปลอดภัย:* Token จะถูกเก็บเฉพาะใน `localStorage` ของเบราว์เซอร์คุณเท่านั้น ไม่มีการ Hardcode ลงในซอร์สโค้ด
@@ -48,7 +48,7 @@ npm run build
    ```bash
    git init
    git add .
-   git commit -m "เริ่มต้นโปรเจกต์ MeowIncome เวอร์ชัน 1.0.0"
+   git commit -m "เริ่มต้นโปรเจกต์ PawPocket เวอร์ชัน 1.0.0"
    git branch -M main
    git remote add origin https://github.com/<USERNAME>/<REPO_NAME>.git
    git push -u origin main

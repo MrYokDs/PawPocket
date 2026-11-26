@@ -3,8 +3,8 @@ import type { GitSyncConfig } from '../types/gitSync';
 import type { IncomeEntry, IncomeMap } from '../types/income';
 import { parseIncomeExpression } from './expressionParser';
 
-const INCOMES_STORAGE_KEY = 'meow_income_entries_v1';
-const GIT_SYNC_CONFIG_KEY = 'meow_income_git_config_v1';
+const INCOMES_STORAGE_KEY = 'paw_pocket_entries_v1';
+const GIT_SYNC_CONFIG_KEY = 'paw_pocket_git_config_v1';
 
 /** ค่าเริ่มต้นของการตั้งค่า GitHub Sync */
 export const DEFAULT_GIT_SYNC_CONFIG: GitSyncConfig = {
@@ -132,7 +132,7 @@ export function normalizeIncomeData(rawData: unknown): IncomeMap {
  */
 export function exportIncomesToJsonFile(entries: IncomeMap): void {
   const payload = {
-    app: 'MeowIncome',
+    app: 'PawPocket',
     exportedAt: new Date().toISOString(),
     entries,
   };
@@ -142,7 +142,7 @@ export function exportIncomesToJsonFile(entries: IncomeMap): void {
   const url = URL.createObjectURL(blob);
   const link = document.createElement('a');
   link.href = url;
-  link.download = `meow-income-backup-${dayjs().format('YYYY-MM-DD')}.json`;
+  link.download = `paw-pocket-backup-${dayjs().format('YYYY-MM-DD')}.json`;
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);

@@ -10,6 +10,11 @@
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
+## Graph Freshness
+- Built from commit: `3df9dad6`
+- Run `git rev-parse HEAD` and compare to check if the graph is stale.
+- Run `graphify update .` after code changes (no API cost).
+
 ## Community Hubs (Navigation)
 - Dashboard/Dashboard.tsx
 - package.json
@@ -19,13 +24,13 @@
 - compilerOptions
 - main.tsx
 - devDependencies
-- MeowIncome 🐱🌈💖
+- PawPocket 🐱🌈💖
 - CatMascot.tsx
-- AGENTS.md — กฎและมาตรฐานหลักของโปรเจกต์ MeowIncome 🐱🌈💖
+- AGENTS.md — กฎและมาตรฐานหลักของโปรเจกต์ PawPocket 🐱🌈💖
 - Workspace Terminal Execution
 - Autonomous Build Verification
 - Autonomous Git Commit & Semantic Versioning
-- Common Skills — มาตรฐานการเขียนโค้ด MeowIncome
+- Common Skills — มาตรฐานการเขียนโค้ด PawPocket
 - Graphify Knowledge Graph Skill
 - tsconfig.json
 - graphify.md
@@ -92,17 +97,17 @@ Nodes (5): react-dom, react-router-dom, App(), AppRoutes(), ROUTE_PATHS
 Cohesion: 0.25
 Nodes (8): devDependencies, tailwindcss, @tailwindcss/vite, @types/react, @types/react-dom, typescript, vite, @vitejs/plugin-react
 
-### Community 8 - "MeowIncome 🐱🌈💖"
+### Community 8 - "PawPocket 🐱🌈💖"
 Cohesion: 0.33
-Nodes (5): MeowIncome 🐱🌈💖, ฟีเจอร์หลัก, วิธี Deploy ขึ้น Vercel (vercel.app), วิธีรันโปรเจกต์บนเครื่อง (Local Development), วิธีสร้าง GitHub Personal Access Token สำหรับ GitHub Sync
+Nodes (5): PawPocket 🐱🌈💖, ฟีเจอร์หลัก, วิธี Deploy ขึ้น Vercel (vercel.app), วิธีรันโปรเจกต์บนเครื่อง (Local Development), วิธีสร้าง GitHub Personal Access Token สำหรับ GitHub Sync
 
 ### Community 9 - "CatMascot.tsx"
 Cohesion: 0.50
 Nodes (4): CatMascot(), CatMascotProps, CatMood, resolveCatState()
 
-### Community 10 - "AGENTS.md — กฎและมาตรฐานหลักของโปรเจกต์ MeowIncome 🐱🌈💖"
+### Community 10 - "AGENTS.md — กฎและมาตรฐานหลักของโปรเจกต์ PawPocket 🐱🌈💖"
 Cohesion: 0.50
-Nodes (3): AGENTS.md — กฎและมาตรฐานหลักของโปรเจกต์ MeowIncome 🐱🌈💖, กฎเหล็กประจำโปรเจกต์ (Project Golden Rules), ชุดสกิลประจำโปรเจกต์ (`.agents/skills/`)
+Nodes (3): AGENTS.md — กฎและมาตรฐานหลักของโปรเจกต์ PawPocket 🐱🌈💖, กฎเหล็กประจำโปรเจกต์ (Project Golden Rules), ชุดสกิลประจำโปรเจกต์ (`.agents/skills/`)
 
 ### Community 11 - "Workspace Terminal Execution"
 Cohesion: 0.50
