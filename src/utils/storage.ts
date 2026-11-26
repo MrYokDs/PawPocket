@@ -6,10 +6,10 @@ import { parseIncomeExpression } from './expressionParser';
 const INCOMES_STORAGE_KEY = 'paw_pocket_entries_v1';
 const GIT_SYNC_CONFIG_KEY = 'paw_pocket_git_config_v1';
 
-/** ค่าเริ่มต้นของการตั้งค่า GitHub Sync */
+/** ค่าเริ่มต้นของการตั้งค่า GitHub Sync (ผูกกับ Repo ของโปรเจกต์พร้อมใช้งานทันที) */
 export const DEFAULT_GIT_SYNC_CONFIG: GitSyncConfig = {
-  owner: '',
-  repo: '',
+  owner: 'MrYokDs',
+  repo: 'PawPocket',
   branch: 'main',
   filePath: 'data/incomes.json',
   token: '',
@@ -52,8 +52,12 @@ export function loadGitSyncConfig(): GitSyncConfig {
     if (!raw) return { ...DEFAULT_GIT_SYNC_CONFIG };
     const parsed = JSON.parse(raw) as Partial<GitSyncConfig>;
     return {
-      ...DEFAULT_GIT_SYNC_CONFIG,
-      ...parsed,
+      owner: parsed.owner?.trim() || DEFAULT_GIT_SYNC_CONFIG.owner,
+      repo: parsed.repo?.trim() || DEFAULT_GIT_SYNC_CONFIG.repo,
+      branch: parsed.branch?.trim() || DEFAULT_GIT_SYNC_CONFIG.branch,
+      filePath: parsed.filePath?.trim() || DEFAULT_GIT_SYNC_CONFIG.filePath,
+      token: parsed.token ?? '',
+      autoSync: Boolean(parsed.autoSync),
     };
   } catch {
     return { ...DEFAULT_GIT_SYNC_CONFIG };

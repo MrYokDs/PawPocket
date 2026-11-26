@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import {
+  AlertCircle,
   CheckCircle2,
+  ChevronDown,
+  ChevronUp,
   CloudDownload,
   CloudUpload,
   Download,
@@ -9,9 +12,9 @@ import {
   Github,
   Loader2,
   ShieldCheck,
+  SlidersHorizontal,
   Upload,
   X,
-  AlertCircle,
 } from 'lucide-react';
 import type { GitSyncConfig, SyncStatus } from '../types/gitSync';
 
@@ -37,10 +40,10 @@ interface GitSyncModalProps {
 }
 
 /**
- * หน้าต่าง Modal สำหรับตั้งค่าการซิงค์ข้อมูลขึ้น GitHub และสำรองข้อมูล JSON
+ * หน้าต่าง Modal สำหรับซิงค์ข้อมูลขึ้น GitHub (กรอกแค่ Token ก็ใช้ได้ทันที) และสำรองไฟล์ JSON
  *
  * @param props พร็อพส์ควบคุมการทำงานของ GitSyncModal
- * @returns คอมโพเนนต์ Modal ตั้งค่า GitHub Sync
+ * @returns คอมโพเนนต์ Modal ซิงค์ข้อมูล GitHub
  */
 export default function GitSyncModal({
   isOpen,
@@ -55,13 +58,13 @@ export default function GitSyncModal({
 }: GitSyncModalProps) {
   const [formState, setFormState] = useState<GitSyncConfig>(config);
   const [showToken, setShowToken] = useState(false);
-  const [savedNotice, setSavedNotice] = useState(false);
+  const [showAdvanced, setShowAdvanced] = useState(false);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
     if (isOpen) {
       setFormState(config);
-      setSavedNotice(false);
+      setShowAdvanced(false);
     }
   }, [isOpen, config]);
 
@@ -69,17 +72,16 @@ export default function GitSyncModal({
 
   const isBusy = syncStatus.state === 'syncing';
 
+  /** อัปเดตค่าในฟอร์มและบันทึกลง LocalStorage อัตโนมัติทันที */
   const handleFieldChange = <K extends keyof GitSyncConfig>(
     key: K,
     value: GitSyncConfig[K]
   ) => {
-    setFormState((prev) => ({ ...prev, [key]: value }));
-    setSavedNotice(false);
-  };
-
-  const handleSave = () => {
-    onSaveConfig(formState);
-    setSavedNotice(true);
+    setFormState((prev) => {
+      const next = { ...prev, [key]: value };
+      onSaveConfig(next);
+      return next;
+    });
   };
 
   const handlePull = async () => {
@@ -106,7 +108,7 @@ export default function GitSyncModal({
       aria-modal="true"
       aria-labelledby="git-sync-modal-title"
     >
-      <div className="rainbow-border-gradient max-h-[92vh] w-full max-w-lg overflow-hidden rounded-[28px] p-[2px] shadow-2xl">
+      <div className="rainbow-border-gradient max-h-[92vh] w-full max-w-md overflow-hidden rounded-[28px] p-[2px] shadow-2xl">
         <div className="flex max-h-[calc(92vh-4px)] flex-col overflow-y-auto rounded-[26px] bg-white p-5 sm:p-6">
           {/* ส่วนหัว Modal */}
           <div className="mb-4 flex items-center justify-between gap-3">
@@ -122,7 +124,7 @@ export default function GitSyncModal({
                   ซิงค์ข้อมูล GitHub & สำรองไฟล์
                 </h2>
                 <p className="text-xs text-pink-600/80">
-                  เก็บข้อมูลรายได้ไว้บน GitHub ส่วนตัว รองรับภาษาไทย 100%
+                  วาง Token แล้วกดดึงหรืออัปข้อมูลได้ทันที 🌈
                 </p>
               </div>
             </div>
@@ -140,81 +142,28 @@ export default function GitSyncModal({
           <div className="mb-4 flex items-start gap-2.5 rounded-2xl border border-emerald-200/80 bg-emerald-50/70 px-3.5 py-2.5 text-xs text-emerald-800">
             <ShieldCheck className="mt-0.5 h-4 w-4 flex-shrink-0 text-emerald-600" />
             <p>
-              Personal Access Token จะถูกเก็บไว้เฉพาะใน{' '}
-              <span className="font-semibold">LocalStorage</span>{' '}
-              ของเบราว์เซอร์เครื่องนี้เท่านั้น ไม่มีการส่งไปยังเซิร์ฟเวอร์อื่นนอกจาก GitHub API โดยตรง
+              Token เก็บเฉพาะใน <span className="font-semibold">LocalStorage</span>{' '}
+              ของเครื่องนี้ และบันทึกให้อัตโนมัติทันทีที่กรอก
             </p>
           </div>
 
-          {/* ฟอร์มตั้งค่า GitHub */}
+          {/* ช่องกรอก Token + สวิตช์ Auto-Sync */}
           <div className="space-y-3">
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-              <div>
-                <label className="mb-1 block text-xs font-semibold text-[#6b4255]">
-                  GitHub Owner (Username)
-                </label>
-                <input
-                  type="text"
-                  value={formState.owner}
-                  onChange={(e) => handleFieldChange('owner', e.target.value)}
-                  placeholder="เช่น your-username"
-                  className="w-full rounded-xl border border-pink-200 bg-pink-50/30 px-3 py-2 text-sm text-[#4a2c3a] outline-none transition focus:border-pink-400 focus:bg-white focus:ring-2 focus:ring-pink-200"
-                />
-              </div>
-
-              <div>
-                <label className="mb-1 block text-xs font-semibold text-[#6b4255]">
-                  Repository Name
-                </label>
-                <input
-                  type="text"
-                  value={formState.repo}
-                  onChange={(e) => handleFieldChange('repo', e.target.value)}
-                  placeholder="เช่น paw-pocket-data"
-                  className="w-full rounded-xl border border-pink-200 bg-pink-50/30 px-3 py-2 text-sm text-[#4a2c3a] outline-none transition focus:border-pink-400 focus:bg-white focus:ring-2 focus:ring-pink-200"
-                />
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-              <div>
-                <label className="mb-1 block text-xs font-semibold text-[#6b4255]">
-                  Branch
-                </label>
-                <input
-                  type="text"
-                  value={formState.branch}
-                  onChange={(e) => handleFieldChange('branch', e.target.value)}
-                  placeholder="main"
-                  className="w-full rounded-xl border border-pink-200 bg-pink-50/30 px-3 py-2 text-sm text-[#4a2c3a] outline-none transition focus:border-pink-400 focus:bg-white focus:ring-2 focus:ring-pink-200"
-                />
-              </div>
-
-              <div>
-                <label className="mb-1 block text-xs font-semibold text-[#6b4255]">
-                  File Path
-                </label>
-                <input
-                  type="text"
-                  value={formState.filePath}
-                  onChange={(e) => handleFieldChange('filePath', e.target.value)}
-                  placeholder="data/incomes.json"
-                  className="w-full rounded-xl border border-pink-200 bg-pink-50/30 px-3 py-2 text-sm text-[#4a2c3a] outline-none transition focus:border-pink-400 focus:bg-white focus:ring-2 focus:ring-pink-200"
-                />
-              </div>
-            </div>
-
             <div>
-              <label className="mb-1 block text-xs font-semibold text-[#6b4255]">
-                Personal Access Token (สิทธิ์ Contents: Read & Write)
+              <label
+                htmlFor="github-token-input"
+                className="mb-1 block text-xs font-semibold text-[#6b4255]"
+              >
+                GitHub Personal Access Token
               </label>
               <div className="relative">
                 <input
+                  id="github-token-input"
                   type={showToken ? 'text' : 'password'}
                   value={formState.token}
                   onChange={(e) => handleFieldChange('token', e.target.value)}
-                  placeholder="ghp_xxxxxxxxxxxx หรือ github_pat_xxxx"
-                  className="w-full rounded-xl border border-pink-200 bg-pink-50/30 py-2 pr-10 pl-3 text-sm text-[#4a2c3a] outline-none transition focus:border-pink-400 focus:bg-white focus:ring-2 focus:ring-pink-200"
+                  placeholder="วาง github_pat_xxxx หรือ ghp_xxxx ที่นี่"
+                  className="w-full rounded-xl border border-pink-200 bg-pink-50/30 py-2.5 pr-10 pl-3.5 text-sm text-[#4a2c3a] outline-none transition focus:border-pink-400 focus:bg-white focus:ring-2 focus:ring-pink-200"
                 />
                 <button
                   type="button"
@@ -234,7 +183,7 @@ export default function GitSyncModal({
                   Auto-Sync หลังบันทึก/ลบข้อมูล
                 </span>
                 <span className="text-xs text-[#8a5d72]">
-                  ส่งข้อมูลขึ้น GitHub อัตโนมัติทุกครั้งที่แก้ไขรายได้
+                  อัปข้อมูลขึ้น GitHub อัตโนมัติทุกครั้งที่แก้ไขรายได้
                 </span>
               </div>
               <input
@@ -247,7 +196,7 @@ export default function GitSyncModal({
           </div>
 
           {/* แสดงสถานะการซิงค์ */}
-          {(syncStatus.message || savedNotice) && (
+          {syncStatus.message && (
             <div
               className={`mt-4 flex items-start gap-2 rounded-2xl px-3.5 py-2.5 text-xs font-medium ${
                 syncStatus.state === 'error'
@@ -263,46 +212,32 @@ export default function GitSyncModal({
               {syncStatus.state === 'error' && (
                 <AlertCircle className="mt-0.5 h-4 w-4 flex-shrink-0" />
               )}
-              {(syncStatus.state === 'success' || savedNotice) &&
-                syncStatus.state !== 'syncing' &&
-                syncStatus.state !== 'error' && (
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0" />
-                )}
-              <span>
-                {savedNotice && !syncStatus.message
-                  ? 'บันทึกการตั้งค่า GitHub Sync เรียบร้อยแล้ว'
-                  : syncStatus.message}
-              </span>
+              {syncStatus.state === 'success' && (
+                <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0" />
+              )}
+              <span>{syncStatus.message}</span>
             </div>
           )}
 
-          {/* ปุ่มดำเนินการ GitHub Sync */}
-          <div className="mt-4 grid grid-cols-1 gap-2.5 sm:grid-cols-3">
-            <button
-              type="button"
-              onClick={handleSave}
-              disabled={isBusy}
-              className="rounded-xl border border-pink-200 bg-pink-50 px-3 py-2.5 text-sm font-semibold text-pink-700 transition hover:bg-pink-100 disabled:opacity-60"
-            >
-              บันทึกตั้งค่า
-            </button>
+          {/* ปุ่ม ดึงข้อมูล / อัปข้อมูล */}
+          <div className="mt-4 grid grid-cols-2 gap-2.5">
             <button
               type="button"
               onClick={handlePull}
               disabled={isBusy}
-              className="flex items-center justify-center gap-1.5 rounded-xl bg-sky-500 px-3 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-sky-600 disabled:opacity-60"
+              className="flex items-center justify-center gap-1.5 rounded-2xl bg-sky-500 px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-sky-600 active:scale-[0.98] disabled:opacity-60"
             >
               <CloudDownload className="h-4 w-4" />
-              ดึงข้อมูล (Pull)
+              ดึงข้อมูล
             </button>
             <button
               type="button"
               onClick={handlePush}
               disabled={isBusy}
-              className="rainbow-btn-bg flex items-center justify-center gap-1.5 rounded-xl px-3 py-2.5 text-sm font-semibold text-white shadow-sm transition disabled:opacity-60"
+              className="rainbow-btn-bg flex items-center justify-center gap-1.5 rounded-2xl px-4 py-3 text-sm font-semibold text-white shadow-sm transition active:scale-[0.98] disabled:opacity-60"
             >
               <CloudUpload className="h-4 w-4" />
-              ส่งขึ้น Git (Push)
+              อัปข้อมูล
             </button>
           </div>
 
@@ -319,7 +254,7 @@ export default function GitSyncModal({
             <button
               type="button"
               onClick={onExportJson}
-              className="flex items-center justify-center gap-2 rounded-xl border border-pink-200 bg-white px-3 py-2.5 text-sm font-semibold text-[#6b4255] transition hover:border-pink-300 hover:bg-pink-50"
+              className="flex items-center justify-center gap-2 rounded-2xl border border-pink-200 bg-white px-3 py-2.5 text-sm font-semibold text-[#6b4255] transition hover:border-pink-300 hover:bg-pink-50"
             >
               <Download className="h-4 w-4 text-pink-500" />
               Export JSON
@@ -327,7 +262,7 @@ export default function GitSyncModal({
             <button
               type="button"
               onClick={() => fileInputRef.current?.click()}
-              className="flex items-center justify-center gap-2 rounded-xl border border-pink-200 bg-white px-3 py-2.5 text-sm font-semibold text-[#6b4255] transition hover:border-pink-300 hover:bg-pink-50"
+              className="flex items-center justify-center gap-2 rounded-2xl border border-pink-200 bg-white px-3 py-2.5 text-sm font-semibold text-[#6b4255] transition hover:border-pink-300 hover:bg-pink-50"
             >
               <Upload className="h-4 w-4 text-pink-500" />
               Import JSON
@@ -340,9 +275,76 @@ export default function GitSyncModal({
               className="hidden"
             />
           </div>
+
+          {/* ส่วนตั้งค่าปลายทาง Repo แบบซ่อน (เผื่อต้องการเปลี่ยนในอนาคต) */}
+          <div className="mt-4 border-t border-pink-100 pt-3">
+            <button
+              type="button"
+              onClick={() => setShowAdvanced((prev) => !prev)}
+              className="flex w-full items-center justify-between text-xs font-medium text-[#8a5d72] transition hover:text-pink-600"
+            >
+              <span className="inline-flex items-center gap-1.5">
+                <SlidersHorizontal className="h-3.5 w-3.5" />
+                ปลายทาง: {formState.owner}/{formState.repo} ({formState.filePath})
+              </span>
+              {showAdvanced ? (
+                <ChevronUp className="h-4 w-4" />
+              ) : (
+                <ChevronDown className="h-4 w-4" />
+              )}
+            </button>
+
+            {showAdvanced && (
+              <div className="mt-3 grid grid-cols-2 gap-2.5 rounded-2xl bg-pink-50/40 p-3">
+                <div>
+                  <label className="mb-1 block text-[11px] font-semibold text-[#6b4255]">
+                    Owner
+                  </label>
+                  <input
+                    type="text"
+                    value={formState.owner}
+                    onChange={(e) => handleFieldChange('owner', e.target.value)}
+                    className="w-full rounded-lg border border-pink-200 bg-white px-2.5 py-1.5 text-xs text-[#4a2c3a] outline-none focus:border-pink-400"
+                  />
+                </div>
+                <div>
+                  <label className="mb-1 block text-[11px] font-semibold text-[#6b4255]">
+                    Repository
+                  </label>
+                  <input
+                    type="text"
+                    value={formState.repo}
+                    onChange={(e) => handleFieldChange('repo', e.target.value)}
+                    className="w-full rounded-lg border border-pink-200 bg-white px-2.5 py-1.5 text-xs text-[#4a2c3a] outline-none focus:border-pink-400"
+                  />
+                </div>
+                <div>
+                  <label className="mb-1 block text-[11px] font-semibold text-[#6b4255]">
+                    Branch
+                  </label>
+                  <input
+                    type="text"
+                    value={formState.branch}
+                    onChange={(e) => handleFieldChange('branch', e.target.value)}
+                    className="w-full rounded-lg border border-pink-200 bg-white px-2.5 py-1.5 text-xs text-[#4a2c3a] outline-none focus:border-pink-400"
+                  />
+                </div>
+                <div>
+                  <label className="mb-1 block text-[11px] font-semibold text-[#6b4255]">
+                    File Path
+                  </label>
+                  <input
+                    type="text"
+                    value={formState.filePath}
+                    onChange={(e) => handleFieldChange('filePath', e.target.value)}
+                    className="w-full rounded-lg border border-pink-200 bg-white px-2.5 py-1.5 text-xs text-[#4a2c3a] outline-none focus:border-pink-400"
+                  />
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
   );
 }
-
