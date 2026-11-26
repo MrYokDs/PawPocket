@@ -58,3 +58,29 @@ export interface MonthlyChartSectionProps {
   onSelectDate: (dateStr: string) => void;
 }
 
+/** พร็อพส์สำหรับแถบสรุปข้อมูลแบบย่อบนมือถือ */
+export interface MobileSummaryBarProps {
+  /** ยอดรวมของวันที่เลือก */
+  selectedAmount: number;
+  /** ยอดรวมทั้งเดือนที่กำลังดู */
+  monthlyTotal: number;
+  /** จำนวนวันที่มีรายได้ในเดือนนี้ */
+  monthlyRecordedDays: number;
+  /** ยอดรวมสะสมทั้งหมด */
+  overallTotal: number;
+}
+
+/** พร็อพส์สำหรับตารางรายการรายได้รายวันบนมือถือ */
+export interface DailyIncomeListProps {
+  /** เดือนที่กำลังแสดงในรูปแบบ YYYY-MM */
+  currentMonthKey: string;
+  /** วันที่ที่เลือกอยู่ในรูปแบบ YYYY-MM-DD */
+  selectedDate: string;
+  /** ข้อมูลสรุปรายเดือน */
+  monthlySummary: MonthlySummary;
+  /** เปลี่ยนเดือนที่กำลังแสดง */
+  onChangeMonth: (nextMonthKey: string) => void;
+  /** เลือกวันที่จากรายการเพื่อโหลดขึ้นฟอร์ม */
+  onSelectDate: (dateStr: string) => void;
+}
+

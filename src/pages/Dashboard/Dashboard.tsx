@@ -2,10 +2,12 @@
 import { useCallback, useMemo, useState } from 'react';
 import dayjs from 'dayjs';
 import {
+  CalendarDays,
   CheckCircle2,
   Cloud,
   CloudOff,
   Heart,
+  List,
   Loader2,
   PawPrint,
   Sparkles,
@@ -29,8 +31,10 @@ import {
   saveGitSyncConfig,
   saveIncomeEntries,
 } from '../../utils/storage';
+import DailyIncomeList from './sections/DailyIncomeList';
 import IncomeCalendar from './sections/IncomeCalendar';
 import IncomeFormCard from './sections/IncomeFormCard';
+import MobileSummaryBar from './sections/MobileSummaryBar';
 import MonthlyChartSection from './sections/MonthlyChartSection';
 import SummaryCards from './sections/SummaryCards';
 
@@ -55,6 +59,7 @@ export default function Dashboard() {
     message: '',
   });
   const [isSyncModalOpen, setIsSyncModalOpen] = useState(false);
+  const [mobileListView, setMobileListView] = useState<'calendar' | 'table'>('table');
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
   /** แสดงแถบแจ้งเตือนสั้นๆ ด้านบนหน้าจอ */
@@ -225,23 +230,23 @@ export default function Dashboard() {
         </div>
       )}
 
-      <div className="mx-auto max-w-6xl space-y-5 px-4 pt-5 sm:px-6 lg:px-8">
-        {/* ส่วนหัวแอปพลิเคชัน */}
-        <header className="flex flex-wrap items-center justify-between gap-3">
-          <div className="flex items-center gap-3">
-            <div className="rainbow-border-gradient flex h-12 w-12 items-center justify-center rounded-2xl p-[2px] shadow-sm">
+      <div className="mx-auto max-w-6xl space-y-4 px-3.5 pt-4 sm:px-6 lg:space-y-5 lg:px-8 lg:pt-5">
+        {/* ส่วนหัวแอปพลิเคชัน (กระชับบนมือถือ เต็มรูปแบบบนคอมพิวเตอร์) */}
+        <header className="flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2.5 sm:gap-3">
+            <div className="rainbow-border-gradient flex h-10 w-10 items-center justify-center rounded-2xl p-[2px] shadow-sm sm:h-12 sm:w-12">
               <div className="flex h-full w-full items-center justify-center rounded-[14px] bg-white">
-                <PawPrint className="h-6 w-6 text-pink-500" />
+                <PawPrint className="h-5 w-5 text-pink-500 sm:h-6 sm:w-6" />
               </div>
             </div>
             <div>
               <div className="flex items-center gap-1.5">
-                <h1 className="text-xl font-bold tracking-tight text-[#4a2c3a] sm:text-2xl">
+                <h1 className="text-lg font-bold tracking-tight text-[#4a2c3a] sm:text-2xl">
                   PawPocket
                 </h1>
                 <Sparkles className="h-4 w-4 text-amber-400" />
               </div>
-              <p className="font-cute text-xs text-[#8a5d72] sm:text-sm">
+              <p className="font-cute hidden text-xs text-[#8a5d72] sm:block sm:text-sm">
                 บันทึกรายได้พิเศษรายวัน สดใสไปกับน้องแมวและสายรุ้ง
               </p>
             </div>
@@ -250,7 +255,7 @@ export default function Dashboard() {
           <button
             type="button"
             onClick={() => setIsSyncModalOpen(true)}
-            className="inline-flex items-center gap-2 rounded-2xl border border-pink-200 bg-white/90 px-4 py-2.5 text-xs font-semibold text-[#5c3648] shadow-sm transition hover:border-pink-300 hover:bg-pink-50 active:scale-95 sm:text-sm"
+            className="inline-flex items-center gap-1.5 rounded-2xl border border-pink-200 bg-white/90 px-3 py-2 text-xs font-semibold text-[#5c3648] shadow-sm transition hover:border-pink-300 hover:bg-pink-50 active:scale-95 sm:gap-2 sm:px-4 sm:py-2.5 sm:text-sm"
           >
             {syncStatus.state === 'syncing' ? (
               <Loader2 className="h-4 w-4 animate-spin text-pink-500" />
@@ -261,32 +266,37 @@ export default function Dashboard() {
             ) : (
               <Cloud className="h-4 w-4 text-pink-500" />
             )}
-            <span>GitHub Sync & สำรองข้อมูล</span>
+            <span className="sm:hidden">Sync</span>
+            <span className="hidden sm:inline">GitHub Sync & สำรองข้อมูล</span>
           </button>
         </header>
 
-        {/* การ์ดน้องแมว Mascot + กล่องคำพูด */}
-        <RainbowCard contentClassName="p-4 sm:p-5">
-          <CatMascot
-            selectedAmount={selectedEntry?.totalAmount ?? 0}
-            hasEntry={Boolean(selectedEntry)}
-            monthlyAverage={monthlySummary.averagePerRecordedDay}
-            selectedDateLabel={formatThaiFullDate(selectedDate)}
+        {/* การ์ดน้องแมว Mascot + กล่องคำพูด (แสดงเฉพาะบนหน้าจอใหญ่เพื่อให้มือถือโฟกัสที่ช่องจดรายได้) */}
+        <div className="hidden lg:block">
+          <RainbowCard contentClassName="p-4 sm:p-5">
+            <CatMascot
+              selectedAmount={selectedEntry?.totalAmount ?? 0}
+              hasEntry={Boolean(selectedEntry)}
+              monthlyAverage={monthlySummary.averagePerRecordedDay}
+              selectedDateLabel={formatThaiFullDate(selectedDate)}
+            />
+          </RainbowCard>
+        </div>
+
+        {/* การ์ดสรุปยอด 3 ใบแบบเต็ม (แสดงเฉพาะบนหน้าจอใหญ่) */}
+        <div className="hidden lg:block">
+          <SummaryCards
+            selectedDate={selectedDate}
+            selectedEntry={selectedEntry}
+            monthlySummary={monthlySummary}
+            overallSummary={overallSummary}
+            onSelectDate={handleSelectDate}
+            onSelectMonth={setCurrentMonthKey}
           />
-        </RainbowCard>
+        </div>
 
-        {/* การ์ดสรุปยอด 3 ใบ (รายวัน / รายเดือน / สะสมทั้งหมด) */}
-        <SummaryCards
-          selectedDate={selectedDate}
-          selectedEntry={selectedEntry}
-          monthlySummary={monthlySummary}
-          overallSummary={overallSummary}
-          onSelectDate={handleSelectDate}
-          onSelectMonth={setCurrentMonthKey}
-        />
-
-        {/* โซนหลัก: ฟอร์มกรอกรายได้ + ปฏิทินโต้ตอบ */}
-        <div className="grid grid-cols-1 gap-5 lg:grid-cols-12">
+        {/* โซนหลัก: บนมือถือแสดง "จดรายได้พิเศษ" เด่นสุดด้านบน ตามด้วย "สรุปเล็กๆ" และ "ตารางรายวัน/ปฏิทิน" */}
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-12 lg:gap-5">
           <div className="lg:col-span-5">
             <IncomeFormCard
               selectedDate={selectedDate}
@@ -297,23 +307,93 @@ export default function Dashboard() {
             />
           </div>
 
-          <div className="lg:col-span-7">
-            <IncomeCalendar
-              currentMonthKey={currentMonthKey}
-              selectedDate={selectedDate}
-              monthlySummary={monthlySummary}
-              onChangeMonth={setCurrentMonthKey}
-              onSelectDate={handleSelectDate}
+          {/* แถบสรุปข้อมูลขนาดเล็ก (แสดงเฉพาะบนมือถือ) */}
+          <div className="lg:hidden">
+            <MobileSummaryBar
+              selectedAmount={selectedEntry?.totalAmount ?? 0}
+              monthlyTotal={monthlySummary.totalAmount}
+              monthlyRecordedDays={monthlySummary.recordedDaysCount}
+              overallTotal={overallSummary.totalAmount}
             />
+          </div>
+
+          {/* ส่วนตารางดูรายได้รวมรายวัน / ปฏิทิน */}
+          <div className="lg:col-span-7">
+            {/* ตัวสลับมุมมองเฉพาะบนมือถือ (ตารางรายวัน / ปฏิทิน) */}
+            <div className="mb-2.5 flex items-center justify-between lg:hidden">
+              <span className="text-xs font-bold text-[#6b4255]">
+                รายได้รวมรายวัน ({monthlySummary.recordedDaysCount} วัน)
+              </span>
+              <div className="inline-flex rounded-xl border border-pink-200 bg-white/90 p-0.5 shadow-2xs">
+                <button
+                  type="button"
+                  onClick={() => setMobileListView('table')}
+                  className={`inline-flex items-center gap-1 rounded-lg px-2.5 py-1 text-[11px] font-semibold transition ${
+                    mobileListView === 'table'
+                      ? 'bg-pink-500 text-white'
+                      : 'text-[#8a5d72]'
+                  }`}
+                >
+                  <List className="h-3.5 w-3.5" />
+                  ตาราง
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setMobileListView('calendar')}
+                  className={`inline-flex items-center gap-1 rounded-lg px-2.5 py-1 text-[11px] font-semibold transition ${
+                    mobileListView === 'calendar'
+                      ? 'bg-pink-500 text-white'
+                      : 'text-[#8a5d72]'
+                  }`}
+                >
+                  <CalendarDays className="h-3.5 w-3.5" />
+                  ปฏิทิน
+                </button>
+              </div>
+            </div>
+
+            {/* มือถือ: แสดงตารางรายวันหรือปฏิทินตามที่เลือก */}
+            <div className="lg:hidden">
+              {mobileListView === 'table' ? (
+                <DailyIncomeList
+                  currentMonthKey={currentMonthKey}
+                  selectedDate={selectedDate}
+                  monthlySummary={monthlySummary}
+                  onChangeMonth={setCurrentMonthKey}
+                  onSelectDate={handleSelectDate}
+                />
+              ) : (
+                <IncomeCalendar
+                  currentMonthKey={currentMonthKey}
+                  selectedDate={selectedDate}
+                  monthlySummary={monthlySummary}
+                  onChangeMonth={setCurrentMonthKey}
+                  onSelectDate={handleSelectDate}
+                />
+              )}
+            </div>
+
+            {/* คอมพิวเตอร์: แสดงปฏิทินเต็มรูปแบบ */}
+            <div className="hidden lg:block">
+              <IncomeCalendar
+                currentMonthKey={currentMonthKey}
+                selectedDate={selectedDate}
+                monthlySummary={monthlySummary}
+                onChangeMonth={setCurrentMonthKey}
+                onSelectDate={handleSelectDate}
+              />
+            </div>
           </div>
         </div>
 
-        {/* กราฟแท่งสีรุ้งพาสเทลรายวันในเดือน */}
-        <MonthlyChartSection
-          monthlySummary={monthlySummary}
-          selectedDate={selectedDate}
-          onSelectDate={handleSelectDate}
-        />
+        {/* กราฟแท่งสีรุ้งพาสเทลรายวันในเดือน (แสดงเฉพาะบนหน้าจอใหญ่) */}
+        <div className="hidden lg:block">
+          <MonthlyChartSection
+            monthlySummary={monthlySummary}
+            selectedDate={selectedDate}
+            onSelectDate={handleSelectDate}
+          />
+        </div>
 
         {/* ฟุตเตอร์น่ารัก */}
         <footer className="flex items-center justify-center gap-1.5 pt-2 text-xs text-[#9c7286]">
