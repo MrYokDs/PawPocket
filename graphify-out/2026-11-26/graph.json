@@ -56,19 +56,6 @@
       "source_location": "L18"
     },
     {
-      "id": "src_types_income_incomemap",
-      "label": "IncomeMap",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Dashboard/Dashboard.tsx",
-      "file_type": "code",
-      "norm_label": "incomemap",
-      "source_file": "src/types/income.ts",
-      "source_location": "L16"
-    },
-    {
       "id": "src_utils_githubsync_githubcontentresponse",
       "label": "GitHubContentResponse",
       "_callable": true,
@@ -108,6 +95,19 @@
       "source_location": "L3"
     },
     {
+      "id": "src_pages_dashboard_types_dailyincomelistprops",
+      "label": "DailyIncomeListProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "incomeMath.ts",
+      "file_type": "code",
+      "norm_label": "dailyincomelistprops",
+      "source_file": "src/pages/Dashboard/types.ts",
+      "source_location": "L74"
+    },
+    {
       "id": "src_pages_dashboard_types_incomecalendarprops",
       "label": "IncomeCalendarProps",
       "_callable": true,
@@ -132,6 +132,19 @@
       "norm_label": "incomeformcardprops",
       "source_file": "src/pages/Dashboard/types.ts",
       "source_location": "L24"
+    },
+    {
+      "id": "src_pages_dashboard_types_mobilesummarybarprops",
+      "label": "MobileSummaryBarProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "incomeMath.ts",
+      "file_type": "code",
+      "norm_label": "mobilesummarybarprops",
+      "source_file": "src/pages/Dashboard/types.ts",
+      "source_location": "L62"
     },
     {
       "id": "src_pages_dashboard_types_monthlychartsectionprops",
@@ -197,6 +210,19 @@
       "norm_label": "incomeentry",
       "source_file": "src/types/income.ts",
       "source_location": "L2"
+    },
+    {
+      "id": "src_types_income_incomemap",
+      "label": "IncomeMap",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "incomeMath.ts",
+      "file_type": "code",
+      "norm_label": "incomemap",
+      "source_file": "src/types/income.ts",
+      "source_location": "L16"
     },
     {
       "id": "src_types_income_monthlycomparisonitem",
@@ -298,7 +324,19 @@
       "file_type": "code",
       "norm_label": "dashboard()",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L42"
+      "source_location": "L46"
+    },
+    {
+      "id": "src_pages_dashboard_sections_mobilesummarybar_mobilesummarybar",
+      "label": "MobileSummaryBar()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Dashboard/Dashboard.tsx",
+      "file_type": "code",
+      "norm_label": "mobilesummarybar()",
+      "source_file": "src/pages/Dashboard/sections/MobileSummaryBar.tsx",
+      "source_location": "L11"
     },
     {
       "id": "src_utils_githubsync_buildcontentsurl",
@@ -493,6 +531,18 @@
       "source_location": "L20"
     },
     {
+      "id": "src_pages_dashboard_sections_dailyincomelist_dailyincomelist",
+      "label": "DailyIncomeList()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "IncomeFormCard.tsx",
+      "file_type": "code",
+      "norm_label": "dailyincomelist()",
+      "source_file": "src/pages/Dashboard/sections/DailyIncomeList.tsx",
+      "source_location": "L15"
+    },
+    {
       "id": "src_pages_dashboard_sections_incomecalendar_incomecalendar",
       "label": "IncomeCalendar()",
       "_callable": true,
@@ -606,7 +656,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "dayjs",
+      "community_name": "main.tsx",
       "file_type": "code",
       "norm_label": "app()",
       "source_file": "src/App.tsx",
@@ -618,7 +668,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "dayjs",
+      "community_name": "main.tsx",
       "file_type": "code",
       "norm_label": "approutes()",
       "source_file": "src/routes/AppRoutes.tsx",
@@ -1362,6 +1412,17 @@
       "source_location": "L1"
     },
     {
+      "id": "src_pages_dashboard_sections_dailyincomelist",
+      "label": "DailyIncomeList.tsx",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "IncomeFormCard.tsx",
+      "file_type": "code",
+      "norm_label": "dailyincomelist.tsx",
+      "source_file": "src/pages/Dashboard/sections/DailyIncomeList.tsx",
+      "source_location": "L1"
+    },
+    {
       "id": "src_pages_dashboard_sections_incomecalendar",
       "label": "IncomeCalendar.tsx",
       "_origin": "ast",
@@ -1470,6 +1531,17 @@
       "norm_label": "expressionparser.ts",
       "source_file": "src/utils/expressionParser.ts",
       "source_location": "L1"
+    },
+    {
+      "id": "ref_dayjs",
+      "label": "dayjs",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "IncomeFormCard.tsx",
+      "file_type": "concept",
+      "norm_label": "dayjs",
+      "source_file": "package.json",
+      "source_location": "L13"
     },
     {
       "id": "ref_lucide_react",
@@ -1711,6 +1783,17 @@
       "file_type": "code",
       "norm_label": "index.ts",
       "source_file": "src/pages/Dashboard/index.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_pages_dashboard_sections_mobilesummarybar",
+      "label": "MobileSummaryBar.tsx",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "incomeMath.ts",
+      "file_type": "code",
+      "norm_label": "mobilesummarybar.tsx",
+      "source_file": "src/pages/Dashboard/sections/MobileSummaryBar.tsx",
       "source_location": "L1"
     },
     {
@@ -1982,7 +2065,7 @@
       "label": "App.tsx",
       "_origin": "ast",
       "community": 6,
-      "community_name": "dayjs",
+      "community_name": "main.tsx",
       "file_type": "code",
       "norm_label": "app.tsx",
       "source_file": "src/App.tsx",
@@ -1993,7 +2076,7 @@
       "label": "main.tsx",
       "_origin": "ast",
       "community": 6,
-      "community_name": "dayjs",
+      "community_name": "main.tsx",
       "file_type": "code",
       "norm_label": "main.tsx",
       "source_file": "src/main.tsx",
@@ -2004,7 +2087,7 @@
       "label": "pages/Dashboard.tsx",
       "_origin": "ast",
       "community": 6,
-      "community_name": "dayjs",
+      "community_name": "main.tsx",
       "file_type": "code",
       "norm_label": "pages/dashboard.tsx",
       "source_file": "src/pages/Dashboard.tsx",
@@ -2015,7 +2098,7 @@
       "label": "AppRoutes.tsx",
       "_origin": "ast",
       "community": 6,
-      "community_name": "dayjs",
+      "community_name": "main.tsx",
       "file_type": "code",
       "norm_label": "approutes.tsx",
       "source_file": "src/routes/AppRoutes.tsx",
@@ -2026,7 +2109,7 @@
       "label": "paths.ts",
       "_origin": "ast",
       "community": 6,
-      "community_name": "dayjs",
+      "community_name": "main.tsx",
       "file_type": "code",
       "norm_label": "paths.ts",
       "source_file": "src/routes/paths.ts",
@@ -2037,29 +2120,18 @@
       "label": "ROUTE_PATHS",
       "_origin": "ast",
       "community": 6,
-      "community_name": "dayjs",
+      "community_name": "main.tsx",
       "file_type": "code",
       "norm_label": "route_paths",
       "source_file": "src/routes/paths.ts",
       "source_location": "L2"
     },
     {
-      "id": "ref_dayjs",
-      "label": "dayjs",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "dayjs",
-      "file_type": "concept",
-      "norm_label": "dayjs",
-      "source_file": "package.json",
-      "source_location": "L13"
-    },
-    {
       "id": "ref_react",
       "label": "react",
       "_origin": "ast",
       "community": 6,
-      "community_name": "dayjs",
+      "community_name": "main.tsx",
       "file_type": "concept",
       "norm_label": "react",
       "source_file": "package.json",
@@ -2070,7 +2142,7 @@
       "label": "react-dom",
       "_origin": "ast",
       "community": 6,
-      "community_name": "dayjs",
+      "community_name": "main.tsx",
       "file_type": "concept",
       "norm_label": "react-dom",
       "source_file": "package.json",
@@ -2081,7 +2153,7 @@
       "label": "react-router-dom",
       "_origin": "ast",
       "community": 6,
-      "community_name": "dayjs",
+      "community_name": "main.tsx",
       "file_type": "concept",
       "norm_label": "react-router-dom",
       "source_file": "package.json",
@@ -2263,7 +2335,7 @@
       "label": "src_index",
       "_origin": "semantic",
       "community": 6,
-      "community_name": "dayjs",
+      "community_name": "main.tsx",
       "external": true,
       "file_type": "concept",
       "norm_label": "src_index",
@@ -2317,7 +2389,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L115",
+      "source_location": "L120",
       "weight": 1.0
     },
     {
@@ -2329,7 +2401,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L117",
+      "source_location": "L122",
       "weight": 1.0
     },
     {
@@ -2341,7 +2413,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L177",
+      "source_location": "L182",
       "weight": 1.0
     },
     {
@@ -2353,7 +2425,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L182",
+      "source_location": "L187",
       "weight": 1.0
     },
     {
@@ -2365,7 +2437,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L191",
+      "source_location": "L196",
       "weight": 1.0
     },
     {
@@ -2377,7 +2449,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L269",
+      "source_location": "L276",
       "weight": 1.0
     },
     {
@@ -2389,7 +2461,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L270",
+      "source_location": "L277",
       "weight": 1.0
     },
     {
@@ -2401,7 +2473,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L274",
+      "source_location": "L281",
       "weight": 1.0
     },
     {
@@ -2413,7 +2485,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L279",
+      "source_location": "L288",
       "weight": 1.0
     },
     {
@@ -2425,24 +2497,12 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L291",
-      "weight": 1.0
-    },
-    {
-      "source": "src_pages_dashboard_dashboard_dashboard",
-      "target": "src_pages_dashboard_sections_incomecalendar_incomecalendar",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/pages/Dashboard/Dashboard.tsx",
       "source_location": "L301",
       "weight": 1.0
     },
     {
       "source": "src_pages_dashboard_dashboard_dashboard",
-      "target": "src_pages_dashboard_sections_monthlychartsection_monthlychartsection",
+      "target": "src_pages_dashboard_sections_mobilesummarybar_mobilesummarybar",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -2454,6 +2514,42 @@
     },
     {
       "source": "src_pages_dashboard_dashboard_dashboard",
+      "target": "src_pages_dashboard_sections_dailyincomelist_dailyincomelist",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/pages/Dashboard/Dashboard.tsx",
+      "source_location": "L358",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_dashboard_dashboard",
+      "target": "src_pages_dashboard_sections_incomecalendar_incomecalendar",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/pages/Dashboard/Dashboard.tsx",
+      "source_location": "L366",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_dashboard_dashboard",
+      "target": "src_pages_dashboard_sections_monthlychartsection_monthlychartsection",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/pages/Dashboard/Dashboard.tsx",
+      "source_location": "L391",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_dashboard_dashboard",
       "target": "src_components_gitsyncmodal_gitsyncmodal",
       "relation": "calls",
       "_origin": "ast",
@@ -2461,7 +2557,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L327",
+      "source_location": "L407",
       "weight": 1.0
     },
     {
@@ -2473,7 +2569,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L45",
+      "source_location": "L49",
       "weight": 1.0
     },
     {
@@ -2485,7 +2581,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L51",
+      "source_location": "L55",
       "weight": 1.0
     },
     {
@@ -2497,7 +2593,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L70",
+      "source_location": "L75",
       "weight": 1.0
     },
     {
@@ -2509,7 +2605,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L75",
+      "source_location": "L80",
       "weight": 1.0
     },
     {
@@ -2521,7 +2617,43 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L90",
+      "source_location": "L95",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_sections_dailyincomelist_dailyincomelist",
+      "target": "src_utils_expressionparser_formatcurrency",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/pages/Dashboard/sections/DailyIncomeList.tsx",
+      "source_location": "L132",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_sections_dailyincomelist_dailyincomelist",
+      "target": "src_components_rainbowcard_rainbowcard",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/pages/Dashboard/sections/DailyIncomeList.tsx",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_sections_dailyincomelist_dailyincomelist",
+      "target": "src_utils_incomemath_formatthaimonthyear",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/pages/Dashboard/sections/DailyIncomeList.tsx",
+      "source_location": "L48",
       "weight": 1.0
     },
     {
@@ -2606,6 +2738,18 @@
       "context": "call",
       "source_file": "src/pages/Dashboard/sections/IncomeFormCard.tsx",
       "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_sections_mobilesummarybar_mobilesummarybar",
+      "target": "src_utils_expressionparser_formatcompactcurrency",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/pages/Dashboard/sections/MobileSummaryBar.tsx",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -2957,6 +3101,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_pages_dashboard_types_dailyincomelistprops",
+      "target": "src_types_income_monthlysummary",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "src/pages/Dashboard/types.ts",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
       "source": "src_pages_dashboard_types_incomecalendarprops",
       "target": "src_types_income_monthlysummary",
       "relation": "references",
@@ -3253,7 +3409,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L13",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -3265,7 +3421,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L14",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -3277,7 +3433,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L15",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -3289,7 +3445,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L16",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -3301,7 +3457,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L16",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -3313,7 +3469,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L17",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -3325,7 +3481,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L17",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -3337,7 +3493,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L18",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -3349,7 +3505,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L18",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -3361,7 +3517,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L19",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -3373,7 +3529,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L19",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -3385,7 +3541,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L19",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -3397,7 +3553,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L24",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -3409,7 +3565,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L24",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -3421,7 +3577,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L24",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -3433,7 +3589,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L24",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -3445,7 +3601,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L24",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -3457,36 +3613,12 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L24",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
       "source": "src_pages_dashboard_dashboard",
-      "target": "src_pages_dashboard_sections_incomecalendar_incomecalendar",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L32",
-      "weight": 1.0
-    },
-    {
-      "source": "src_pages_dashboard_dashboard",
-      "target": "src_pages_dashboard_sections_incomeformcard_incomeformcard",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L33",
-      "weight": 1.0
-    },
-    {
-      "source": "src_pages_dashboard_dashboard",
-      "target": "src_pages_dashboard_sections_monthlychartsection_monthlychartsection",
+      "target": "src_pages_dashboard_sections_dailyincomelist_dailyincomelist",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -3498,7 +3630,7 @@
     },
     {
       "source": "src_pages_dashboard_dashboard",
-      "target": "src_pages_dashboard_sections_summarycards_summarycards",
+      "target": "src_pages_dashboard_sections_incomecalendar_incomecalendar",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -3506,6 +3638,102 @@
       "context": "import",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
       "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_dashboard",
+      "target": "src_pages_dashboard_sections_incomeformcard_incomeformcard",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/pages/Dashboard/Dashboard.tsx",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_dashboard",
+      "target": "src_pages_dashboard_sections_mobilesummarybar_mobilesummarybar",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/pages/Dashboard/Dashboard.tsx",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_dashboard",
+      "target": "src_pages_dashboard_sections_monthlychartsection_monthlychartsection",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/pages/Dashboard/Dashboard.tsx",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_dashboard",
+      "target": "src_pages_dashboard_sections_summarycards_summarycards",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/pages/Dashboard/Dashboard.tsx",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_sections_dailyincomelist",
+      "target": "src_components_rainbowcard_rainbowcard",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/pages/Dashboard/sections/DailyIncomeList.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_sections_dailyincomelist",
+      "target": "src_utils_expressionparser_formatcurrency",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/pages/Dashboard/sections/DailyIncomeList.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_sections_dailyincomelist",
+      "target": "src_utils_incomemath_formatthaimonthyear",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/pages/Dashboard/sections/DailyIncomeList.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_sections_dailyincomelist",
+      "target": "src_pages_dashboard_types_dailyincomelistprops",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/pages/Dashboard/sections/DailyIncomeList.tsx",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -3614,6 +3842,30 @@
       "context": "import",
       "source_file": "src/pages/Dashboard/sections/IncomeFormCard.tsx",
       "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_sections_mobilesummarybar",
+      "target": "src_utils_expressionparser_formatcompactcurrency",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/pages/Dashboard/sections/MobileSummaryBar.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_sections_mobilesummarybar",
+      "target": "src_pages_dashboard_types_mobilesummarybarprops",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/pages/Dashboard/sections/MobileSummaryBar.tsx",
+      "source_location": "L3",
       "weight": 1.0
     },
     {
@@ -4143,7 +4395,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L13",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -4155,7 +4407,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L14",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -4167,7 +4419,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L15",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -4179,7 +4431,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L16",
+      "source_location": "L18",
       "type_only": true,
       "weight": 1.0
     },
@@ -4192,32 +4444,8 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L17",
-      "type_only": true,
-      "weight": 1.0
-    },
-    {
-      "source": "src_pages_dashboard_dashboard",
-      "target": "src_utils_githubsync",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L18",
-      "weight": 1.0
-    },
-    {
-      "source": "src_pages_dashboard_dashboard",
-      "target": "src_utils_incomemath",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/pages/Dashboard/Dashboard.tsx",
       "source_location": "L19",
+      "type_only": true,
       "weight": 1.0
     },
     {
@@ -4234,6 +4462,30 @@
     },
     {
       "source": "src_pages_dashboard_dashboard",
+      "target": "src_utils_githubsync",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/pages/Dashboard/Dashboard.tsx",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_dashboard",
+      "target": "src_utils_incomemath",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/pages/Dashboard/Dashboard.tsx",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_dashboard",
       "target": "src_utils_storage",
       "relation": "imports_from",
       "_origin": "ast",
@@ -4241,7 +4493,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L24",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -4258,31 +4510,7 @@
     },
     {
       "source": "src_pages_dashboard_dashboard",
-      "target": "src_pages_dashboard_sections_incomecalendar",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L32",
-      "weight": 1.0
-    },
-    {
-      "source": "src_pages_dashboard_dashboard",
-      "target": "src_pages_dashboard_sections_incomeformcard",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L33",
-      "weight": 1.0
-    },
-    {
-      "source": "src_pages_dashboard_dashboard",
-      "target": "src_pages_dashboard_sections_monthlychartsection",
+      "target": "src_pages_dashboard_sections_dailyincomelist",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -4294,7 +4522,7 @@
     },
     {
       "source": "src_pages_dashboard_dashboard",
-      "target": "src_pages_dashboard_sections_summarycards",
+      "target": "src_pages_dashboard_sections_incomecalendar",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -4302,6 +4530,54 @@
       "context": "import",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
       "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_dashboard",
+      "target": "src_pages_dashboard_sections_incomeformcard",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/pages/Dashboard/Dashboard.tsx",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_dashboard",
+      "target": "src_pages_dashboard_sections_mobilesummarybar",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/pages/Dashboard/Dashboard.tsx",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_dashboard",
+      "target": "src_pages_dashboard_sections_monthlychartsection",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/pages/Dashboard/Dashboard.tsx",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_dashboard",
+      "target": "src_pages_dashboard_sections_summarycards",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/pages/Dashboard/Dashboard.tsx",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -4314,6 +4590,79 @@
       "context": "import",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
       "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_sections_dailyincomelist",
+      "target": "ref_dayjs",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/pages/Dashboard/sections/DailyIncomeList.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_sections_dailyincomelist",
+      "target": "ref_lucide_react",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/pages/Dashboard/sections/DailyIncomeList.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_sections_dailyincomelist",
+      "target": "src_components_rainbowcard",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/pages/Dashboard/sections/DailyIncomeList.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_sections_dailyincomelist",
+      "target": "src_utils_expressionparser",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/pages/Dashboard/sections/DailyIncomeList.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_sections_dailyincomelist",
+      "target": "src_utils_incomemath",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/pages/Dashboard/sections/DailyIncomeList.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_sections_dailyincomelist",
+      "target": "src_pages_dashboard_types",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/pages/Dashboard/sections/DailyIncomeList.tsx",
+      "source_location": "L6",
+      "type_only": true,
       "weight": 1.0
     },
     {
@@ -4472,6 +4821,43 @@
       "context": "import",
       "source_file": "src/pages/Dashboard/sections/IncomeFormCard.tsx",
       "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_sections_mobilesummarybar",
+      "target": "ref_lucide_react",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/pages/Dashboard/sections/MobileSummaryBar.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_sections_mobilesummarybar",
+      "target": "src_utils_expressionparser",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/pages/Dashboard/sections/MobileSummaryBar.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_sections_mobilesummarybar",
+      "target": "src_pages_dashboard_types",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/pages/Dashboard/sections/MobileSummaryBar.tsx",
+      "source_location": "L3",
+      "type_only": true,
       "weight": 1.0
     },
     {
@@ -5410,7 +5796,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L42",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_sections_dailyincomelist",
+      "target": "src_pages_dashboard_sections_dailyincomelist_dailyincomelist",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/pages/Dashboard/sections/DailyIncomeList.tsx",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -5480,6 +5877,17 @@
       "weight": 1.0
     },
     {
+      "source": "src_pages_dashboard_sections_mobilesummarybar",
+      "target": "src_pages_dashboard_sections_mobilesummarybar_mobilesummarybar",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/pages/Dashboard/sections/MobileSummaryBar.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
       "source": "src_pages_dashboard_sections_monthlychartsection",
       "target": "src_pages_dashboard_sections_monthlychartsection_pastel_rainbow_colors",
       "relation": "contains",
@@ -5543,6 +5951,28 @@
       "confidence_score": 1.0,
       "source_file": "src/pages/Dashboard/types.ts",
       "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_types",
+      "target": "src_pages_dashboard_types_mobilesummarybarprops",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/pages/Dashboard/types.ts",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_types",
+      "target": "src_pages_dashboard_types_dailyincomelistprops",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/pages/Dashboard/types.ts",
+      "source_location": "L74",
       "weight": 1.0
     },
     {
@@ -6416,5 +6846,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "d89a77eaedfdb34946b3c652e3539d77625ee120"
+  "built_at_commit": "55c9b36119596b2bffadf905c43bad09e5c104cf"
 }

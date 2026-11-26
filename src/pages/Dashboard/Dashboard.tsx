@@ -295,7 +295,17 @@ export default function Dashboard() {
           />
         </div>
 
-        {/* โซนหลัก: บนมือถือแสดง "จดรายได้พิเศษ" เด่นสุดด้านบน ตามด้วย "สรุปเล็กๆ" และ "ตารางรายวัน/ปฏิทิน" */}
+        {/* แถบสรุปข้อมูลขนาดเล็กด้านบน (แสดงเฉพาะบนมือถือ) */}
+        <div className="lg:hidden">
+          <MobileSummaryBar
+            selectedAmount={selectedEntry?.totalAmount ?? 0}
+            monthlyTotal={monthlySummary.totalAmount}
+            monthlyRecordedDays={monthlySummary.recordedDaysCount}
+            overallTotal={overallSummary.totalAmount}
+          />
+        </div>
+
+        {/* โซนหลัก: ฟอร์มจดรายได้พิเศษ + ตารางรายวัน/ปฏิทิน */}
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-12 lg:gap-5">
           <div className="lg:col-span-5">
             <IncomeFormCard
@@ -304,16 +314,6 @@ export default function Dashboard() {
               onChangeDate={handleSelectDate}
               onSaveEntry={handleSaveEntry}
               onDeleteEntry={handleDeleteEntry}
-            />
-          </div>
-
-          {/* แถบสรุปข้อมูลขนาดเล็ก (แสดงเฉพาะบนมือถือ) */}
-          <div className="lg:hidden">
-            <MobileSummaryBar
-              selectedAmount={selectedEntry?.totalAmount ?? 0}
-              monthlyTotal={monthlySummary.totalAmount}
-              monthlyRecordedDays={monthlySummary.recordedDaysCount}
-              overallTotal={overallSummary.totalAmount}
             />
           </div>
 
