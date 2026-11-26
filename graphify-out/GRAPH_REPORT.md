@@ -1,17 +1,17 @@
 # Graph Report - PawPocket  (2026-11-26)
 
 ## Corpus Check
-- 36 files · ~9,410 words
+- 36 files · ~9,500 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 2 file(s) not represented in the graph (top: (none) 1, .css 1)
 
 ## Summary
-- 194 nodes · 355 edges · 20 communities (12 shown, 8 thin omitted)
+- 195 nodes · 356 edges · 20 communities (12 shown, 8 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `d4639779`
+- Built from commit: `946a65ef`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -22,7 +22,7 @@
 - compilerOptions
 - incomeMath.ts
 - compilerOptions
-- main.tsx
+- dayjs
 - devDependencies
 - PawPocket 🐱🌈💖
 - CatMascot.tsx
@@ -67,7 +67,7 @@
 
 ### Community 0 - "Dashboard/Dashboard.tsx"
 Cohesion: 0.17
-Nodes (25): dayjs, GitSyncModal(), GitSyncModalProps, Dashboard(), GitSyncConfig, SyncStatus, SyncStatusState, buildContentsUrl() (+17 more)
+Nodes (25): GitSyncModal(), GitSyncModalProps, Dashboard(), GitSyncConfig, SyncStatus, SyncStatusState, IncomeMap, buildContentsUrl() (+17 more)
 
 ### Community 1 - "package.json"
 Cohesion: 0.08
@@ -75,23 +75,23 @@ Nodes (24): dependencies, dayjs, js-base64, lucide-react, react, react-dom, reac
 
 ### Community 2 - "IncomeFormCard.tsx"
 Cohesion: 0.24
-Nodes (17): lucide-react, react, RainbowCard(), RainbowCardProps, IncomeCalendar(), RAINBOW_DOT_COLORS, WEEKDAY_HEADERS, IncomeFormCard() (+9 more)
+Nodes (17): lucide-react, RainbowCard(), RainbowCardProps, IncomeCalendar(), RAINBOW_DOT_COLORS, WEEKDAY_HEADERS, IncomeFormCard(), QUICK_AMOUNTS (+9 more)
 
 ### Community 3 - "compilerOptions"
 Cohesion: 0.10
 Nodes (19): compilerOptions, allowImportingTsExtensions, isolatedModules, jsx, lib, module, moduleDetection, moduleResolution (+11 more)
 
 ### Community 4 - "incomeMath.ts"
-Cohesion: 0.19
-Nodes (15): IncomeCalendarProps, IncomeFormCardProps, MonthlyChartSectionProps, SummaryCardsProps, DailyStat, ExpressionParseResult, IncomeEntry, IncomeMap (+7 more)
+Cohesion: 0.20
+Nodes (14): IncomeCalendarProps, IncomeFormCardProps, MonthlyChartSectionProps, SummaryCardsProps, DailyStat, ExpressionParseResult, IncomeEntry, MonthlyComparisonItem (+6 more)
 
 ### Community 5 - "compilerOptions"
 Cohesion: 0.11
 Nodes (17): compilerOptions, allowImportingTsExtensions, isolatedModules, lib, module, moduleDetection, moduleResolution, noEmit (+9 more)
 
-### Community 6 - "main.tsx"
-Cohesion: 0.27
-Nodes (5): react-dom, react-router-dom, App(), AppRoutes(), ROUTE_PATHS
+### Community 6 - "dayjs"
+Cohesion: 0.22
+Nodes (7): dayjs, react, react-dom, react-router-dom, App(), AppRoutes(), ROUTE_PATHS
 
 ### Community 7 - "devDependencies"
 Cohesion: 0.25
@@ -114,21 +114,21 @@ Cohesion: 0.50
 Nodes (3): Workspace Terminal Execution, ข้อห้ามเด็ดขาด, ขอบเขตที่อนุญาต
 
 ## Knowledge Gaps
-- **89 isolated node(s):** `name`, `private`, `version`, `type`, `description` (+84 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 100 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **90 isolated node(s):** `name`, `private`, `version`, `type`, `description` (+85 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 101 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `dayjs` connect `Dashboard/Dashboard.tsx` to `package.json`, `IncomeFormCard.tsx`, `incomeMath.ts`, `main.tsx`?**
+- **Why does `dayjs` connect `dayjs` to `Dashboard/Dashboard.tsx`, `package.json`, `IncomeFormCard.tsx`, `incomeMath.ts`?**
   _High betweenness centrality (0.063) - this node is a cross-community bridge._
-- **Why does `devDependencies` connect `devDependencies` to `package.json`?**
-  _High betweenness centrality (0.044) - this node is a cross-community bridge._
 - **Why does `lucide-react` connect `IncomeFormCard.tsx` to `Dashboard/Dashboard.tsx`, `package.json`?**
   _High betweenness centrality (0.044) - this node is a cross-community bridge._
+- **Why does `devDependencies` connect `devDependencies` to `package.json`?**
+  _High betweenness centrality (0.044) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _89 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _90 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `package.json` be split into smaller, more focused modules?**
   _Cohesion score 0.08307692307692308 - nodes in this community are weakly interconnected._
 - **Should `compilerOptions` be split into smaller, more focused modules?**

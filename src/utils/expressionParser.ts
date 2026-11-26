@@ -3,6 +3,7 @@ import type { ExpressionParseResult, ParsedExpressionItem } from '../types/incom
 /**
  * แปลงและคำนวณสูตรบวก/ลบตัวเลขอย่างปลอดภัยโดยไม่ใช้ eval() หรือ new Function()
  * รองรับรูปแบบเช่น "500", "100+200+300", "150 + 50.5 - 20 + 300"
+ * หากกรอกสูตรไม่ครบด้านท้าย เช่น "100+200+-" จะตัดเฉพาะสูตรด้านหน้าที่คำนวณได้มาคำนวณให้ทันที
  *
  * @param rawInput ข้อความสูตรหรือตัวเลขที่ผู้ใช้กรอก
  * @returns ผลลัพธ์การคำนวณ พร้อมสถานะความถูกต้องและรายการย่อยแต่ละตัว
@@ -16,80 +17,45 @@ export function parseIncomeExpression(rawInput: string): ExpressionParseResult {
       total: 0,
       items: [],
       normalizedExpression: '',
-      errorMessage: 'กรุณากรอกตัวเลขหรือสูตรบวกเลข เช่น 100+200+300',
-    };
-  }
-
-  // อนุญาตเฉพาะตัวเลข จุดทศนิยม และเครื่องหมาย + / -
-  if (!/^[0-9+\-.]+$/.test(cleaned)) {
-    return {
-      isValid: false,
-      total: 0,
-      items: [],
-      normalizedExpression: cleaned,
-      errorMessage: 'ใช้ได้เฉพาะตัวเลข, จุดทศนิยม และเครื่องหมาย + หรือ - เท่านั้นนะเมี้ยว',
-    };
-  }
-
-  // ห้ามลงท้ายด้วยเครื่องหมาย + หรือ - หรือจุด
-  if (/[+\-.]$/.test(cleaned)) {
-    return {
-      isValid: false,
-      total: 0,
-      items: [],
-      normalizedExpression: cleaned,
-      errorMessage: 'สูตรยังไม่สมบูรณ์ กรุณากรอกตัวเลขต่อท้ายให้ครบ',
-    };
-  }
-
-  // ห้ามมีเครื่องหมายติดกัน เช่น ++, --, +-, -+
-  if (/[+-]{2,}/.test(cleaned)) {
-    return {
-      isValid: false,
-      total: 0,
-      items: [],
-      normalizedExpression: cleaned,
-      errorMessage: 'พบเครื่องหมายบวกหรือลบติดกัน กรุณาตรวจสอบอีกครั้ง',
+      errorMessage: 'กรุณากรอกตัวเลขหรือสูตรบวกเลข เช่น 75+150+225',
     };
   }
 
   const items: ParsedExpressionItem[] = [];
   let index = 0;
+  let wasTruncated = false;
 
   while (index < cleaned.length) {
     let operator: '+' | '-' = '+';
 
-    if (cleaned[index] === '+' || cleaned[index] === '-') {
+    if (items.length === 0) {
+      if (cleaned[index] === '+' || cleaned[index] === '-') {
+        operator = cleaned[index] as '+' | '-';
+        index += 1;
+      }
+    } else {
+      if (cleaned[index] !== '+' && cleaned[index] !== '-') {
+        wasTruncated = true;
+        break;
+      }
       operator = cleaned[index] as '+' | '-';
       index += 1;
     }
 
-    let numberToken = '';
-    while (index < cleaned.length && cleaned[index] !== '+' && cleaned[index] !== '-') {
-      numberToken += cleaned[index];
-      index += 1;
+    // ตรวจสอบว่ามีตัวเลขต่อท้ายเครื่องหมายหรือไม่ (รองรับทศนิยม เช่น 50.5 หรือ .5)
+    const remaining = cleaned.slice(index);
+    const numberMatch = /^(?:\d+(?:\.\d+)?|\.\d+)/.exec(remaining);
+
+    if (!numberMatch) {
+      wasTruncated = true;
+      break;
     }
 
-    // ตรวจสอบรูปแบบตัวเลข เช่น 100, 50.5, .5 (ห้ามมีจุดหลายจุดหรือเป็นจุดเปล่า)
-    if (!/^(?:\d+(?:\.\d+)?|\.\d+)$/.test(numberToken)) {
-      return {
-        isValid: false,
-        total: 0,
-        items: [],
-        normalizedExpression: cleaned,
-        errorMessage: `รูปแบบตัวเลข "${numberToken}" ไม่ถูกต้อง`,
-      };
-    }
-
+    const numberToken = numberMatch[0];
     const numericValue = Number(numberToken);
     if (!Number.isFinite(numericValue)) {
-      return {
-        isValid: false,
-        total: 0,
-        items: [],
-        normalizedExpression: cleaned,
-        errorMessage: 'ตัวเลขมีค่ามากเกินไป',
-      };
+      wasTruncated = true;
+      break;
     }
 
     items.push({
@@ -97,6 +63,8 @@ export function parseIncomeExpression(rawInput: string): ExpressionParseResult {
       value: Math.round(numericValue * 100) / 100,
       raw: numberToken,
     });
+
+    index += numberToken.length;
   }
 
   if (items.length === 0) {
@@ -104,10 +72,17 @@ export function parseIncomeExpression(rawInput: string): ExpressionParseResult {
       isValid: false,
       total: 0,
       items: [],
-      normalizedExpression: cleaned,
-      errorMessage: 'ไม่พบตัวเลขในสูตร',
+      normalizedExpression: '',
+      errorMessage: 'ไม่พบตัวเลขที่คำนวณได้ กรุณากรอกตัวเลขเช่น 75+150',
     };
   }
+
+  const normalizedExpression = items
+    .map((item, idx) => {
+      if (idx === 0 && item.operator === '+') return item.raw;
+      return `${item.operator}${item.raw}`;
+    })
+    .join('');
 
   const rawTotal = items.reduce((acc, item) => {
     return item.operator === '+' ? acc + item.value : acc - item.value;
@@ -120,7 +95,8 @@ export function parseIncomeExpression(rawInput: string): ExpressionParseResult {
       isValid: false,
       total: roundedTotal,
       items,
-      normalizedExpression: cleaned,
+      normalizedExpression,
+      wasTruncated,
       errorMessage: 'ยอดรวมรายได้สุทธิไม่ควรติดลบนะเมี้ยว',
     };
   }
@@ -129,7 +105,8 @@ export function parseIncomeExpression(rawInput: string): ExpressionParseResult {
     isValid: true,
     total: roundedTotal,
     items,
-    normalizedExpression: cleaned,
+    normalizedExpression,
+    wasTruncated,
   };
 }
 

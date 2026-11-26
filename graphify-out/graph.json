@@ -56,6 +56,19 @@
       "source_location": "L18"
     },
     {
+      "id": "src_types_income_incomemap",
+      "label": "IncomeMap",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Dashboard/Dashboard.tsx",
+      "file_type": "code",
+      "norm_label": "incomemap",
+      "source_file": "src/types/income.ts",
+      "source_location": "L16"
+    },
+    {
       "id": "src_utils_githubsync_githubcontentresponse",
       "label": "GitHubContentResponse",
       "_callable": true,
@@ -157,7 +170,7 @@
       "file_type": "code",
       "norm_label": "dailystat",
       "source_file": "src/types/income.ts",
-      "source_location": "L43"
+      "source_location": "L45"
     },
     {
       "id": "src_types_income_expressionparseresult",
@@ -186,19 +199,6 @@
       "source_location": "L2"
     },
     {
-      "id": "src_types_income_incomemap",
-      "label": "IncomeMap",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "incomeMath.ts",
-      "file_type": "code",
-      "norm_label": "incomemap",
-      "source_file": "src/types/income.ts",
-      "source_location": "L16"
-    },
-    {
       "id": "src_types_income_monthlycomparisonitem",
       "label": "MonthlyComparisonItem",
       "_callable": true,
@@ -209,7 +209,7 @@
       "file_type": "code",
       "norm_label": "monthlycomparisonitem",
       "source_file": "src/types/income.ts",
-      "source_location": "L75"
+      "source_location": "L77"
     },
     {
       "id": "src_types_income_monthlysummary",
@@ -222,7 +222,7 @@
       "file_type": "code",
       "norm_label": "monthlysummary",
       "source_file": "src/types/income.ts",
-      "source_location": "L59"
+      "source_location": "L61"
     },
     {
       "id": "src_types_income_overallsummary",
@@ -235,7 +235,7 @@
       "file_type": "code",
       "norm_label": "overallsummary",
       "source_file": "src/types/income.ts",
-      "source_location": "L87"
+      "source_location": "L89"
     },
     {
       "id": "src_types_income_parsedexpressionitem",
@@ -514,7 +514,7 @@
       "file_type": "code",
       "norm_label": "incomeformcard()",
       "source_file": "src/pages/Dashboard/sections/IncomeFormCard.tsx",
-      "source_location": "L28"
+      "source_location": "L31"
     },
     {
       "id": "src_pages_dashboard_sections_monthlychartsection_monthlychartsection",
@@ -550,7 +550,7 @@
       "file_type": "code",
       "norm_label": "formatcompactcurrency()",
       "source_file": "src/utils/expressionParser.ts",
-      "source_location": "L157"
+      "source_location": "L134"
     },
     {
       "id": "src_utils_expressionparser_formatcurrency",
@@ -562,7 +562,7 @@
       "file_type": "code",
       "norm_label": "formatcurrency()",
       "source_file": "src/utils/expressionParser.ts",
-      "source_location": "L143"
+      "source_location": "L120"
     },
     {
       "id": "src_utils_expressionparser_parseincomeexpression",
@@ -574,7 +574,7 @@
       "file_type": "code",
       "norm_label": "parseincomeexpression()",
       "source_file": "src/utils/expressionParser.ts",
-      "source_location": "L10"
+      "source_location": "L11"
     },
     {
       "id": "src_utils_incomemath_formatthaifulldate",
@@ -606,7 +606,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "main.tsx",
+      "community_name": "dayjs",
       "file_type": "code",
       "norm_label": "app()",
       "source_file": "src/App.tsx",
@@ -618,7 +618,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "main.tsx",
+      "community_name": "dayjs",
       "file_type": "code",
       "norm_label": "approutes()",
       "source_file": "src/routes/AppRoutes.tsx",
@@ -713,17 +713,6 @@
       "norm_label": "default_git_sync_config",
       "source_file": "src/utils/storage.ts",
       "source_location": "L10"
-    },
-    {
-      "id": "ref_dayjs",
-      "label": "dayjs",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Dashboard/Dashboard.tsx",
-      "file_type": "concept",
-      "norm_label": "dayjs",
-      "source_file": "package.json",
-      "source_location": "L13"
     },
     {
       "id": "package",
@@ -1428,6 +1417,17 @@
       "source_location": "L20"
     },
     {
+      "id": "src_pages_dashboard_sections_incomeformcard_quick_note_tags",
+      "label": "QUICK_NOTE_TAGS",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "IncomeFormCard.tsx",
+      "file_type": "code",
+      "norm_label": "quick_note_tags",
+      "source_file": "src/pages/Dashboard/sections/IncomeFormCard.tsx",
+      "source_location": "L23"
+    },
+    {
       "id": "src_pages_dashboard_sections_monthlychartsection",
       "label": "MonthlyChartSection.tsx",
       "_origin": "ast",
@@ -1481,17 +1481,6 @@
       "norm_label": "lucide-react",
       "source_file": "package.json",
       "source_location": "L15"
-    },
-    {
-      "id": "ref_react",
-      "label": "react",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "IncomeFormCard.tsx",
-      "file_type": "concept",
-      "norm_label": "react",
-      "source_file": "package.json",
-      "source_location": "L16"
     },
     {
       "id": "tsconfig_app",
@@ -1993,7 +1982,7 @@
       "label": "App.tsx",
       "_origin": "ast",
       "community": 6,
-      "community_name": "main.tsx",
+      "community_name": "dayjs",
       "file_type": "code",
       "norm_label": "app.tsx",
       "source_file": "src/App.tsx",
@@ -2004,7 +1993,7 @@
       "label": "main.tsx",
       "_origin": "ast",
       "community": 6,
-      "community_name": "main.tsx",
+      "community_name": "dayjs",
       "file_type": "code",
       "norm_label": "main.tsx",
       "source_file": "src/main.tsx",
@@ -2015,7 +2004,7 @@
       "label": "pages/Dashboard.tsx",
       "_origin": "ast",
       "community": 6,
-      "community_name": "main.tsx",
+      "community_name": "dayjs",
       "file_type": "code",
       "norm_label": "pages/dashboard.tsx",
       "source_file": "src/pages/Dashboard.tsx",
@@ -2026,7 +2015,7 @@
       "label": "AppRoutes.tsx",
       "_origin": "ast",
       "community": 6,
-      "community_name": "main.tsx",
+      "community_name": "dayjs",
       "file_type": "code",
       "norm_label": "approutes.tsx",
       "source_file": "src/routes/AppRoutes.tsx",
@@ -2037,7 +2026,7 @@
       "label": "paths.ts",
       "_origin": "ast",
       "community": 6,
-      "community_name": "main.tsx",
+      "community_name": "dayjs",
       "file_type": "code",
       "norm_label": "paths.ts",
       "source_file": "src/routes/paths.ts",
@@ -2048,18 +2037,40 @@
       "label": "ROUTE_PATHS",
       "_origin": "ast",
       "community": 6,
-      "community_name": "main.tsx",
+      "community_name": "dayjs",
       "file_type": "code",
       "norm_label": "route_paths",
       "source_file": "src/routes/paths.ts",
       "source_location": "L2"
     },
     {
+      "id": "ref_dayjs",
+      "label": "dayjs",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "dayjs",
+      "file_type": "concept",
+      "norm_label": "dayjs",
+      "source_file": "package.json",
+      "source_location": "L13"
+    },
+    {
+      "id": "ref_react",
+      "label": "react",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "dayjs",
+      "file_type": "concept",
+      "norm_label": "react",
+      "source_file": "package.json",
+      "source_location": "L16"
+    },
+    {
       "id": "ref_react_dom",
       "label": "react-dom",
       "_origin": "ast",
       "community": 6,
-      "community_name": "main.tsx",
+      "community_name": "dayjs",
       "file_type": "concept",
       "norm_label": "react-dom",
       "source_file": "package.json",
@@ -2070,7 +2081,7 @@
       "label": "react-router-dom",
       "_origin": "ast",
       "community": 6,
-      "community_name": "main.tsx",
+      "community_name": "dayjs",
       "file_type": "concept",
       "norm_label": "react-router-dom",
       "source_file": "package.json",
@@ -2252,7 +2263,7 @@
       "label": "src_index",
       "_origin": "semantic",
       "community": 6,
-      "community_name": "main.tsx",
+      "community_name": "dayjs",
       "external": true,
       "file_type": "concept",
       "norm_label": "src_index",
@@ -2551,6 +2562,18 @@
     },
     {
       "source": "src_pages_dashboard_sections_incomeformcard_incomeformcard",
+      "target": "src_components_rainbowcard_rainbowcard",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/pages/Dashboard/sections/IncomeFormCard.tsx",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_sections_incomeformcard_incomeformcard",
       "target": "src_utils_incomemath_formatthaifulldate",
       "relation": "calls",
       "_origin": "ast",
@@ -2558,7 +2581,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/sections/IncomeFormCard.tsx",
-      "source_location": "L131",
+      "source_location": "L149",
       "weight": 1.0
     },
     {
@@ -2570,7 +2593,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/sections/IncomeFormCard.tsx",
-      "source_location": "L203",
+      "source_location": "L222",
       "weight": 1.0
     },
     {
@@ -2582,19 +2605,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/sections/IncomeFormCard.tsx",
-      "source_location": "L46",
-      "weight": 1.0
-    },
-    {
-      "source": "src_pages_dashboard_sections_incomeformcard_incomeformcard",
-      "target": "src_components_rainbowcard_rainbowcard",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/pages/Dashboard/sections/IncomeFormCard.tsx",
-      "source_location": "L92",
+      "source_location": "L49",
       "weight": 1.0
     },
     {
@@ -5448,13 +5459,24 @@
     },
     {
       "source": "src_pages_dashboard_sections_incomeformcard",
+      "target": "src_pages_dashboard_sections_incomeformcard_quick_note_tags",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/pages/Dashboard/sections/IncomeFormCard.tsx",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_sections_incomeformcard",
       "target": "src_pages_dashboard_sections_incomeformcard_incomeformcard",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/pages/Dashboard/sections/IncomeFormCard.tsx",
-      "source_location": "L28",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -5641,7 +5663,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/types/income.ts",
-      "source_location": "L43",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
@@ -5652,7 +5674,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/types/income.ts",
-      "source_location": "L59",
+      "source_location": "L61",
       "weight": 1.0
     },
     {
@@ -5663,7 +5685,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/types/income.ts",
-      "source_location": "L75",
+      "source_location": "L77",
       "weight": 1.0
     },
     {
@@ -5674,7 +5696,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/types/income.ts",
-      "source_location": "L87",
+      "source_location": "L89",
       "weight": 1.0
     },
     {
@@ -5685,7 +5707,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/utils/expressionParser.ts",
-      "source_location": "L10",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -5696,7 +5718,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/utils/expressionParser.ts",
-      "source_location": "L143",
+      "source_location": "L120",
       "weight": 1.0
     },
     {
@@ -5707,7 +5729,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/utils/expressionParser.ts",
-      "source_location": "L157",
+      "source_location": "L134",
       "weight": 1.0
     },
     {
@@ -6394,5 +6416,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "d463977901761f7f10d5db6429d2dc7bf843edcd"
+  "built_at_commit": "946a65ef4db2078b4fdc469a9dbf8c14d6d649e9"
 }

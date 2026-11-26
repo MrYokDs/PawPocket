@@ -1,8 +1,8 @@
 {
   "package.json": {
-    "mtime": 1795703523.6275234,
-    "seen": 1795703542.1454093,
-    "ast_hash": "fa943ddd71dced169d74f4be973972d1",
+    "mtime": 1795704088.438558,
+    "seen": 1795704108.9149802,
+    "ast_hash": "45f1d8b6b9243ac32ea6ad08c4008e34",
     "semantic_hash": ""
   },
   "src/App.tsx": {
@@ -18,8 +18,8 @@
     "semantic_hash": ""
   },
   "src/components/GitSyncModal.tsx": {
-    "mtime": 1795703522.6016848,
-    "seen": 1795703542.1454167,
+    "mtime": 1795703619.8996923,
+    "seen": 1795704108.9149919,
     "ast_hash": "2aba5d1ff17023ace855aef7e42c734f",
     "semantic_hash": ""
   },
@@ -60,9 +60,9 @@
     "semantic_hash": ""
   },
   "src/pages/Dashboard/sections/IncomeFormCard.tsx": {
-    "mtime": 1795702308.5957263,
-    "seen": 1795703006.2365496,
-    "ast_hash": "0531bb6d1e4950fcaa4167940ec61710",
+    "mtime": 1795704087.2756858,
+    "seen": 1795704108.9150007,
+    "ast_hash": "3ed50b002e92fc80c9620aa1e3cf63fc",
     "semantic_hash": ""
   },
   "src/pages/Dashboard/sections/MonthlyChartSection.tsx": {
@@ -102,15 +102,15 @@
     "semantic_hash": ""
   },
   "src/types/income.ts": {
-    "mtime": 1795702309.107084,
-    "seen": 1795703006.2365541,
-    "ast_hash": "e26d2aa7d529b97ad75c80f577d74955",
+    "mtime": 1795704079.5393007,
+    "seen": 1795704108.9150085,
+    "ast_hash": "31f1c49271e8042683a2a9171981cc38",
     "semantic_hash": ""
   },
   "src/utils/expressionParser.ts": {
-    "mtime": 1795702309.1873894,
-    "seen": 1795703006.236555,
-    "ast_hash": "9a02ea80f9079006500508ee571827d8",
+    "mtime": 1795704081.7115014,
+    "seen": 1795704108.9150093,
+    "ast_hash": "309ea9b11da4dc1ed49d60afc61e8ec6",
     "semantic_hash": ""
   },
   "src/utils/githubSync.ts": {
@@ -126,8 +126,8 @@
     "semantic_hash": ""
   },
   "src/utils/storage.ts": {
-    "mtime": 1795703521.3515794,
-    "seen": 1795703542.1454325,
+    "mtime": 1795703619.9875364,
+    "seen": 1795704108.915012,
     "ast_hash": "cafc5520afc96bae3fd9c4facb9d0d76",
     "semantic_hash": ""
   },

@@ -35,6 +35,8 @@ export interface ExpressionParseResult {
   items: ParsedExpressionItem[];
   /** สูตรที่จัดรูปเรียบร้อยแล้ว */
   normalizedExpression: string;
+  /** มีการตัดส่วนท้ายที่ยังไม่สมบูรณ์ออกเพื่อคำนวณเฉพาะส่วนหน้าหรือไม่ */
+  wasTruncated?: boolean;
   /** ข้อความแจ้งเตือนกรณีสูตรไม่ถูกต้อง */
   errorMessage?: string;
 }

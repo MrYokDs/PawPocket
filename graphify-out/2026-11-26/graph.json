@@ -14,7 +14,7 @@
       "file_type": "code",
       "norm_label": "gitsyncmodalprops",
       "source_file": "src/components/GitSyncModal.tsx",
-      "source_location": "L18"
+      "source_location": "L21"
     },
     {
       "id": "src_types_gitsync_gitsyncconfig",
@@ -286,7 +286,7 @@
       "file_type": "code",
       "norm_label": "gitsyncmodal()",
       "source_file": "src/components/GitSyncModal.tsx",
-      "source_location": "L45"
+      "source_location": "L48"
     },
     {
       "id": "src_pages_dashboard_dashboard_dashboard",
@@ -406,7 +406,7 @@
       "file_type": "code",
       "norm_label": "exportincomestojsonfile()",
       "source_file": "src/utils/storage.ts",
-      "source_location": "L133"
+      "source_location": "L137"
     },
     {
       "id": "src_utils_storage_loadgitsyncconfig",
@@ -442,7 +442,7 @@
       "file_type": "code",
       "norm_label": "normalizeincomedata()",
       "source_file": "src/utils/storage.ts",
-      "source_location": "L78"
+      "source_location": "L82"
     },
     {
       "id": "src_utils_storage_parseimportedincomesjson",
@@ -454,7 +454,7 @@
       "file_type": "code",
       "norm_label": "parseimportedincomesjson()",
       "source_file": "src/utils/storage.ts",
-      "source_location": "L158"
+      "source_location": "L162"
     },
     {
       "id": "src_utils_storage_savegitsyncconfig",
@@ -466,7 +466,7 @@
       "file_type": "code",
       "norm_label": "savegitsyncconfig()",
       "source_file": "src/utils/storage.ts",
-      "source_location": "L68"
+      "source_location": "L72"
     },
     {
       "id": "src_utils_storage_saveincomeentries",
@@ -2870,7 +2870,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/utils/storage.ts",
-      "source_location": "L106",
+      "source_location": "L110",
       "weight": 1.0
     },
     {
@@ -2882,7 +2882,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/utils/storage.ts",
-      "source_location": "L160",
+      "source_location": "L164",
       "weight": 1.0
     },
     {
@@ -2930,7 +2930,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "src/components/GitSyncModal.tsx",
-      "source_location": "L24",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -2942,7 +2942,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "src/components/GitSyncModal.tsx",
-      "source_location": "L26",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -3206,7 +3206,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/GitSyncModal.tsx",
-      "source_location": "L16",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -3218,7 +3218,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/GitSyncModal.tsx",
-      "source_location": "L16",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -4022,7 +4022,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/GitSyncModal.tsx",
-      "source_location": "L16",
+      "source_location": "L19",
       "type_only": true,
       "weight": 1.0
     },
@@ -5355,7 +5355,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/GitSyncModal.tsx",
-      "source_location": "L18",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -5366,7 +5366,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/GitSyncModal.tsx",
-      "source_location": "L45",
+      "source_location": "L48",
       "weight": 1.0
     },
     {
@@ -5894,7 +5894,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/utils/storage.ts",
-      "source_location": "L133",
+      "source_location": "L137",
       "weight": 1.0
     },
     {
@@ -5905,7 +5905,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/utils/storage.ts",
-      "source_location": "L158",
+      "source_location": "L162",
       "weight": 1.0
     },
     {
@@ -5949,7 +5949,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/utils/storage.ts",
-      "source_location": "L68",
+      "source_location": "L72",
       "weight": 1.0
     },
     {
@@ -5960,7 +5960,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/utils/storage.ts",
-      "source_location": "L78",
+      "source_location": "L82",
       "weight": 1.0
     },
     {
@@ -6394,5 +6394,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "3df9dad6f74491b67500e28c9bc5222226a4ae99"
+  "built_at_commit": "d463977901761f7f10d5db6429d2dc7bf843edcd"
 }

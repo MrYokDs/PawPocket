@@ -16,8 +16,11 @@ import {
 import { formatThaiFullDate } from '../../../utils/incomeMath';
 import type { IncomeFormCardProps } from '../types';
 
-/** ปุ่มลัดสำหรับกดบวกยอดเพิ่มอย่างรวดเร็วบนมือถือ */
-const QUICK_AMOUNTS = [50, 100, 200, 500];
+/** ปุ่มลัดสำหรับกดบวกยอดเพิ่มทีละ 75 บาทอย่างรวดเร็วบนมือถือ */
+const QUICK_AMOUNTS = [75, 150, 225, 300];
+
+/** แท็กหมายเหตุที่ใช้บ่อยสำหรับกดเลือกได้ทันที */
+const QUICK_NOTE_TAGS = ['OT', 'O1000'];
 
 /**
  * ฟอร์มกรอกและแก้ไขรายได้พิเศษรายวัน รองรับสูตรบวก/ลบเลขแบบ Real-time Preview
@@ -63,6 +66,21 @@ export default function IncomeFormCard({
       const trimmed = prev.trim();
       if (!trimmed || /[+-]$/.test(trimmed)) return trimmed;
       return `${trimmed}+`;
+    });
+  };
+
+  /** สลับเพิ่มหรือลบแท็กหมายเหตุ (เช่น OT, O1000) ในช่องหมายเหตุ */
+  const handleToggleNoteTag = (tag: string) => {
+    setNote((prev) => {
+      const tokens = prev
+        .trim()
+        .split(/\s+/)
+        .filter(Boolean);
+      const exists = tokens.includes(tag);
+      const nextTokens = exists
+        ? tokens.filter((item) => item !== tag)
+        : [...tokens, tag];
+      return nextTokens.join(' ');
     });
   };
 
@@ -156,7 +174,7 @@ export default function IncomeFormCard({
             inputMode="decimal"
             value={expression}
             onChange={(e) => setExpression(e.target.value)}
-            placeholder="เช่น 100+200+300 หรือ 150+50.5+300"
+            placeholder="เช่น 75+150+225 หรือ 100+200+300"
             className="w-full rounded-2xl border-2 border-pink-200 bg-white px-4 py-3 text-lg font-semibold tracking-wide text-[#4a2c3a] outline-none transition placeholder:text-sm placeholder:font-normal placeholder:text-pink-300 focus:border-pink-400 focus:ring-4 focus:ring-pink-100"
           />
 
@@ -194,14 +212,22 @@ export default function IncomeFormCard({
           }`}
         >
           {parsed.isValid ? (
-            <div className="flex flex-wrap items-center justify-between gap-2">
-              <div className="flex items-center gap-1.5 text-xs font-semibold text-[#6b4255]">
-                <Sparkles className="h-4 w-4 text-pink-500" />
-                รวมเป็นเงิน ({parsed.items.length} รายการ):
+            <div className="space-y-1">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <div className="flex items-center gap-1.5 text-xs font-semibold text-[#6b4255]">
+                  <Sparkles className="h-4 w-4 text-pink-500" />
+                  รวมเป็นเงิน ({parsed.items.length} รายการ):
+                </div>
+                <div className="text-xl font-bold text-pink-600">
+                  {formatCurrency(parsed.total)}
+                </div>
               </div>
-              <div className="text-xl font-bold text-pink-600">
-                {formatCurrency(parsed.total)}
-              </div>
+              {parsed.wasTruncated && (
+                <p className="text-[11px] font-medium text-amber-700">
+                  คำนวณเฉพาะส่วนด้านหน้า:{' '}
+                  <span className="font-bold">{parsed.normalizedExpression}</span>
+                </p>
+              )}
             </div>
           ) : (
             <p
@@ -229,9 +255,33 @@ export default function IncomeFormCard({
             type="text"
             value={note}
             onChange={(e) => setNote(e.target.value)}
-            placeholder="เช่น งานฟรีแลนซ์, ขายของออนไลน์, ทิปพิเศษ..."
+            placeholder="เช่น OT, O1000, งานฟรีแลนซ์, ทิปพิเศษ..."
             className="w-full rounded-2xl border border-pink-200 bg-pink-50/30 px-3.5 py-2.5 text-sm text-[#4a2c3a] outline-none transition placeholder:text-pink-300 focus:border-pink-400 focus:bg-white focus:ring-2 focus:ring-pink-200"
           />
+
+          {/* แท็กหมายเหตุที่ใช้บ่อย */}
+          <div className="mt-2 flex flex-wrap items-center gap-1.5">
+            {QUICK_NOTE_TAGS.map((tag) => {
+              const isSelected = note
+                .trim()
+                .split(/\s+/)
+                .includes(tag);
+              return (
+                <button
+                  key={tag}
+                  type="button"
+                  onClick={() => handleToggleNoteTag(tag)}
+                  className={`rounded-xl border px-3 py-1 text-xs font-semibold transition active:scale-95 ${
+                    isSelected
+                      ? 'border-pink-400 bg-pink-500 text-white shadow-2xs'
+                      : 'border-pink-200 bg-pink-50/70 text-pink-700 hover:bg-pink-100'
+                  }`}
+                >
+                  #{tag}
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         {/* ปุ่มบันทึก / อัปเดต / ลบ */}
