@@ -69,17 +69,21 @@ export default function IncomeFormCard({
     });
   };
 
-  /** สลับเพิ่มหรือลบแท็กหมายเหตุ (เช่น OT, O1000) ในช่องหมายเหตุ */
+  /** เลือกแท็กหมายเหตุแบบเลือกได้ทีละ 1 แท็ก (แทนที่แท็กเก่า แต่คงข้อความที่พิมพ์เองไว้) */
   const handleToggleNoteTag = (tag: string) => {
     setNote((prev) => {
       const tokens = prev
         .trim()
         .split(/\s+/)
         .filter(Boolean);
-      const exists = tokens.includes(tag);
-      const nextTokens = exists
-        ? tokens.filter((item) => item !== tag)
-        : [...tokens, tag];
+      const isAlreadySelected = tokens.includes(tag);
+      // คงไว้เฉพาะข้อความที่ผู้ใช้พิมพ์เอง (ลบแท็กเดิมใน QUICK_NOTE_TAGS ออกทั้งหมด)
+      const customTokens = tokens.filter(
+        (item) => !QUICK_NOTE_TAGS.includes(item)
+      );
+      const nextTokens = isAlreadySelected
+        ? customTokens
+        : [...customTokens, tag];
       return nextTokens.join(' ');
     });
   };

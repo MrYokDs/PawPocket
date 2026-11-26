@@ -1,8 +1,8 @@
 {
   "package.json": {
-    "mtime": 1795704088.438558,
-    "seen": 1795704108.9149802,
-    "ast_hash": "45f1d8b6b9243ac32ea6ad08c4008e34",
+    "mtime": 1795704193.3420663,
+    "seen": 1795704214.014245,
+    "ast_hash": "6479d82740cf1847af2e1dc94cfe2a48",
     "semantic_hash": ""
   },
   "src/App.tsx": {
@@ -60,9 +60,9 @@
     "semantic_hash": ""
   },
   "src/pages/Dashboard/sections/IncomeFormCard.tsx": {
-    "mtime": 1795704087.2756858,
-    "seen": 1795704108.9150007,
-    "ast_hash": "3ed50b002e92fc80c9620aa1e3cf63fc",
+    "mtime": 1795704191.3850474,
+    "seen": 1795704214.0142615,
+    "ast_hash": "f6d482425daa46b3d5190d7d67e401cc",
     "semantic_hash": ""
   },
   "src/pages/Dashboard/sections/MonthlyChartSection.tsx": {
@@ -108,8 +108,8 @@
     "semantic_hash": ""
   },
   "src/utils/expressionParser.ts": {
-    "mtime": 1795704081.7115014,
-    "seen": 1795704108.9150093,
+    "mtime": 1795704134.6792424,
+    "seen": 1795704214.014268,
     "ast_hash": "309ea9b11da4dc1ed49d60afc61e8ec6",
     "semantic_hash": ""
   },
