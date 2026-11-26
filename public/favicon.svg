@@ -1,22 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="rainbowBorder" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#FF9AA2" />
+      <stop offset="25%" stop-color="#FFB7B2" />
       <stop offset="50%" stop-color="#FFDAC1" />
+      <stop offset="75%" stop-color="#B5EAD7" />
       <stop offset="100%" stop-color="#C7CEEA" />
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="18" fill="url(#bg)" />
-  <circle cx="20" cy="24" r="6" fill="#FFFFFF" />
-  <circle cx="32" cy="18" r="6" fill="#FFFFFF" />
-  <circle cx="44" cy="24" r="6" fill="#FFFFFF" />
-  <path
-    d="M32 29c-9.5 0-16 6.5-16 13.5 0 4.5 3.6 7.5 8 7.5 3 0 5.5-1.2 8-1.2s5 1.2 8 1.2c4.4 0 8-3 8-7.5C48 35.5 41.5 29 32 29z"
-    fill="#FFFFFF"
-  />
-  <circle cx="20" cy="24" r="3.4" fill="#FF6B9D" />
-  <circle cx="32" cy="18" r="3.4" fill="#FF8FAB" />
-  <circle cx="44" cy="24" r="3.4" fill="#FF6B9D" />
-  <ellipse cx="32" cy="40" rx="9" ry="7" fill="#FF6B9D" />
+  <rect x="2" y="2" width="60" height="60" rx="18" fill="url(#rainbowBorder)" />
+  <rect x="6" y="6" width="52" height="52" rx="14" fill="#FFFFFF" />
+  <g
+    fill="none"
+    stroke="#EC4899"
+    stroke-width="3.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <circle cx="34" cy="21" r="3.2" />
+    <circle cx="43.5" cy="26.5" r="3.2" />
+    <circle cx="45.5" cy="36.5" r="3.2" />
+    <path d="M29.5 31c-4.5-2-9.5.5-10.5 5-.9 4.1 2.2 7.5 6.2 8.2 3.1.5 5.4 2.4 8.2 2.4 3.4 0 5.6-2.8 5.1-6.2-.5-3.4-2.5-7.4-9-9.4z" />
+  </g>
 </svg>
-

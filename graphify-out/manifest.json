@@ -1,8 +1,8 @@
 {
   "package.json": {
-    "mtime": 1795705989.3893962,
-    "seen": 1795706008.2805614,
-    "ast_hash": "33f5973df82fd49c9ca5ecaa057856d4",
+    "mtime": 1795707965.742981,
+    "seen": 1795707989.1769495,
+    "ast_hash": "e9f8d7a1ab8aecee23ec7f725881551b",
     "semantic_hash": ""
   },
   "src/App.tsx": {
@@ -216,15 +216,15 @@
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1795703030.4100463,
-    "seen": 1795703542.1454434,
-    "ast_hash": "3f3c67ecab0024e443c7acd3d942f299",
+    "mtime": 1795707964.3831823,
+    "seen": 1795707989.1769803,
+    "ast_hash": "ff1636f38323054d514643946f404257",
     "semantic_hash": ""
   },
   "public/favicon.svg": {
-    "mtime": 1795702307.368722,
-    "seen": 1795703006.2365665,
-    "ast_hash": "40c02bfe5510d43d4b8aa55a3782e046",
+    "mtime": 1795707962.1023912,
+    "seen": 1795707989.1769826,
+    "ast_hash": "968fefc554ac612f7381ca7cfa06ca1f",
     "semantic_hash": ""
   },
   "src/pages/Dashboard/sections/DailyIncomeList.tsx": {
@@ -246,9 +246,27 @@
     "semantic_hash": ""
   },
   "src/components/PastelDatePicker.tsx": {
-    "mtime": 1795705988.1683168,
-    "seen": 1795706008.2805681,
-    "ast_hash": "21a7ab35fa82c3a35f1b6cb8c330f00d",
+    "mtime": 1795707959.8365529,
+    "seen": 1795707989.1769557,
+    "ast_hash": "3151b06a0061026cbf19b383f2bbe600",
+    "semantic_hash": ""
+  },
+  "public/apple-touch-icon.png": {
+    "mtime": 1795707967.4577525,
+    "seen": 1795707989.1769812,
+    "ast_hash": "2406f28f94c72021ac0c6219368d0892",
+    "semantic_hash": ""
+  },
+  "public/icon-192.png": {
+    "mtime": 1795707967.465243,
+    "seen": 1795707989.1769834,
+    "ast_hash": "73316104bb42928201100e96fa1d25d2",
+    "semantic_hash": ""
+  },
+  "public/icon-512.png": {
+    "mtime": 1795707967.571989,
+    "seen": 1795707989.1769838,
+    "ast_hash": "8ab1c4f221ef17ee9cc8a52234b2becf",
     "semantic_hash": ""
   }
 }
