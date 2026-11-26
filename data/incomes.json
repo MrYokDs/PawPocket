@@ -1,0 +1,120 @@
+{
+  "app": "PawPocket",
+  "updatedAt": "2026-11-26T14:51:18.171Z",
+  "entries": {
+    "2026-11-01": {
+      "date": "2026-11-01",
+      "expression": "1425",
+      "totalAmount": 1425,
+      "updatedAt": "2026-11-26T14:50:00.000Z"
+    },
+    "2026-11-02": {
+      "date": "2026-11-02",
+      "expression": "150",
+      "totalAmount": 150,
+      "updatedAt": "2026-11-26T14:50:00.000Z"
+    },
+    "2026-11-03": {
+      "date": "2026-11-03",
+      "expression": "150",
+      "totalAmount": 150,
+      "updatedAt": "2026-11-26T14:50:00.000Z"
+    },
+    "2026-11-04": {
+      "date": "2026-11-04",
+      "expression": "825",
+      "totalAmount": 825,
+      "updatedAt": "2026-11-26T14:50:00.000Z"
+    },
+    "2026-11-05": {
+      "date": "2026-11-05",
+      "expression": "150",
+      "totalAmount": 150,
+      "updatedAt": "2026-11-26T14:50:00.000Z"
+    },
+    "2026-11-06": {
+      "date": "2026-11-06",
+      "expression": "600",
+      "totalAmount": 600,
+      "updatedAt": "2026-11-26T14:50:00.000Z"
+    },
+    "2026-11-08": {
+      "date": "2026-11-08",
+      "expression": "1425",
+      "totalAmount": 1425,
+      "updatedAt": "2026-11-26T14:50:00.000Z"
+    },
+    "2026-11-10": {
+      "date": "2026-11-10",
+      "expression": "150",
+      "totalAmount": 150,
+      "updatedAt": "2026-11-26T14:50:00.000Z"
+    },
+    "2026-11-11": {
+      "date": "2026-11-11",
+      "expression": "800",
+      "totalAmount": 800,
+      "updatedAt": "2026-11-26T14:50:00.000Z"
+    },
+    "2026-11-12": {
+      "date": "2026-11-12",
+      "expression": "600",
+      "totalAmount": 600,
+      "updatedAt": "2026-11-26T14:50:00.000Z"
+    },
+    "2026-11-13": {
+      "date": "2026-11-13",
+      "expression": "150",
+      "totalAmount": 150,
+      "updatedAt": "2026-11-26T14:50:00.000Z"
+    },
+    "2026-11-17": {
+      "date": "2026-11-17",
+      "expression": "225",
+      "totalAmount": 225,
+      "updatedAt": "2026-11-26T14:50:00.000Z"
+    },
+    "2026-11-18": {
+      "date": "2026-11-18",
+      "expression": "225",
+      "totalAmount": 225,
+      "updatedAt": "2026-11-26T14:50:00.000Z"
+    },
+    "2026-11-19": {
+      "date": "2026-11-19",
+      "expression": "600",
+      "totalAmount": 600,
+      "updatedAt": "2026-11-26T14:50:00.000Z"
+    },
+    "2026-11-20": {
+      "date": "2026-11-20",
+      "expression": "150",
+      "totalAmount": 150,
+      "updatedAt": "2026-11-26T14:50:00.000Z"
+    },
+    "2026-11-23": {
+      "date": "2026-11-23",
+      "expression": "75",
+      "totalAmount": 75,
+      "updatedAt": "2026-11-26T14:50:00.000Z"
+    },
+    "2026-11-24": {
+      "date": "2026-11-24",
+      "expression": "150",
+      "totalAmount": 150,
+      "updatedAt": "2026-11-26T14:50:00.000Z"
+    },
+    "2026-11-25": {
+      "date": "2026-11-25",
+      "expression": "750",
+      "totalAmount": 750,
+      "updatedAt": "2026-11-26T14:50:00.000Z"
+    },
+    "2026-11-26": {
+      "date": "2026-11-26",
+      "expression": "150",
+      "totalAmount": 150,
+      "updatedAt": "2026-11-26T14:50:00.000Z"
+    }
+  }
+}
