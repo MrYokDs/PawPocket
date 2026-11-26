@@ -1,0 +1,174 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Prompt", system-ui, -apple-system, sans-serif;
+  --font-cute: "Mali", "Prompt", cursive, sans-serif;
+
+  --color-sakura-50: #fff5f8;
+  --color-sakura-100: #fdf2f8;
+  --color-sakura-200: #fce7f3;
+  --color-sakura-400: #ff8fab;
+  --color-sakura-500: #ff6b9d;
+  --color-sakura-600: #e84d85;
+
+  --color-rainbow-pink: #ff9aa2;
+  --color-rainbow-peach: #ffb7b2;
+  --color-rainbow-cream: #ffdac1;
+  --color-rainbow-lime: #e2f0cb;
+  --color-rainbow-mint: #b5ead7;
+  --color-rainbow-lavender: #c7ceea;
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  color: #4a2c3a;
+  background: linear-gradient(155deg, #fff5f8 0%, #fdf2f8 48%, #fffaf2 100%);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-cute {
+  font-family: var(--font-cute);
+}
+
+/* ขอบไล่เฉดสีสายรุ้งพาสเทล */
+.rainbow-border-gradient {
+  background: linear-gradient(
+    120deg,
+    #ff9aa2 0%,
+    #ffb7b2 20%,
+    #ffdac1 40%,
+    #e2f0cb 60%,
+    #b5ead7 80%,
+    #c7ceea 100%
+  );
+}
+
+.rainbow-bar-bg {
+  background: linear-gradient(
+    90deg,
+    #ff9aa2,
+    #ffb7b2,
+    #ffdac1,
+    #e2f0cb,
+    #b5ead7,
+    #c7ceea
+  );
+}
+
+.rainbow-btn-bg {
+  background: linear-gradient(100deg, #ff6b9d 0%, #ff8fab 50%, #f59e8b 100%);
+}
+
+.rainbow-btn-bg:hover {
+  background: linear-gradient(100deg, #f2558b 0%, #ff7a9c 50%, #ee8c76 100%);
+}
+
+/* แอนิเมชันน้องแมว */
+@keyframes catFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes earTwitchLeft {
+  0%,
+  84%,
+  100% {
+    transform: rotate(0deg);
+  }
+  88% {
+    transform: rotate(-8deg);
+  }
+  92% {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes earTwitchRight {
+  0%,
+  72%,
+  100% {
+    transform: rotate(0deg);
+  }
+  76% {
+    transform: rotate(8deg);
+  }
+  80% {
+    transform: rotate(-3deg);
+  }
+}
+
+@keyframes tailWag {
+  0%,
+  100% {
+    transform: rotate(-7deg);
+  }
+  50% {
+    transform: rotate(9deg);
+  }
+}
+
+@keyframes sparklePulse {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+.animate-cat-float {
+  animation: catFloat 3.4s ease-in-out infinite;
+}
+
+.animate-ear-left {
+  transform-origin: 48px 46px;
+  animation: earTwitchLeft 4.8s ease-in-out infinite;
+}
+
+.animate-ear-right {
+  transform-origin: 112px 46px;
+  animation: earTwitchRight 5.6s ease-in-out infinite;
+}
+
+.animate-tail-wag {
+  transform-origin: 122px 118px;
+  animation: tailWag 2.6s ease-in-out infinite;
+}
+
+.animate-sparkle {
+  animation: sparklePulse 2s ease-in-out infinite;
+}
+
+/* Scrollbar น่ารักโทนชมพูพาสเทล */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff5f8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f9b4cb;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff8fab;
+}
+
