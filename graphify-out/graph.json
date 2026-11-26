@@ -56,6 +56,19 @@
       "source_location": "L18"
     },
     {
+      "id": "src_types_income_incomemap",
+      "label": "IncomeMap",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Dashboard/Dashboard.tsx",
+      "file_type": "code",
+      "norm_label": "incomemap",
+      "source_file": "src/types/income.ts",
+      "source_location": "L16"
+    },
+    {
       "id": "src_utils_githubsync_githubcontentresponse",
       "label": "GitHubContentResponse",
       "_callable": true,
@@ -105,7 +118,7 @@
       "file_type": "code",
       "norm_label": "dailyincomelistprops",
       "source_file": "src/pages/Dashboard/types.ts",
-      "source_location": "L74"
+      "source_location": "L78"
     },
     {
       "id": "src_pages_dashboard_types_incomecalendarprops",
@@ -212,19 +225,6 @@
       "source_location": "L2"
     },
     {
-      "id": "src_types_income_incomemap",
-      "label": "IncomeMap",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "incomeMath.ts",
-      "file_type": "code",
-      "norm_label": "incomemap",
-      "source_file": "src/types/income.ts",
-      "source_location": "L16"
-    },
-    {
       "id": "src_types_income_monthlycomparisonitem",
       "label": "MonthlyComparisonItem",
       "_callable": true,
@@ -235,7 +235,7 @@
       "file_type": "code",
       "norm_label": "monthlycomparisonitem",
       "source_file": "src/types/income.ts",
-      "source_location": "L77"
+      "source_location": "L81"
     },
     {
       "id": "src_types_income_monthlysummary",
@@ -261,7 +261,7 @@
       "file_type": "code",
       "norm_label": "overallsummary",
       "source_file": "src/types/income.ts",
-      "source_location": "L89"
+      "source_location": "L93"
     },
     {
       "id": "src_types_income_parsedexpressionitem",
@@ -327,6 +327,18 @@
       "source_location": "L46"
     },
     {
+      "id": "src_pages_dashboard_sections_incomeformcard_incomeformcard",
+      "label": "IncomeFormCard()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Dashboard/Dashboard.tsx",
+      "file_type": "code",
+      "norm_label": "incomeformcard()",
+      "source_file": "src/pages/Dashboard/sections/IncomeFormCard.tsx",
+      "source_location": "L31"
+    },
+    {
       "id": "src_pages_dashboard_sections_mobilesummarybar_mobilesummarybar",
       "label": "MobileSummaryBar()",
       "_callable": true,
@@ -336,6 +348,18 @@
       "file_type": "code",
       "norm_label": "mobilesummarybar()",
       "source_file": "src/pages/Dashboard/sections/MobileSummaryBar.tsx",
+      "source_location": "L11"
+    },
+    {
+      "id": "src_utils_expressionparser_parseincomeexpression",
+      "label": "parseIncomeExpression()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Dashboard/Dashboard.tsx",
+      "file_type": "code",
+      "norm_label": "parseincomeexpression()",
+      "source_file": "src/utils/expressionParser.ts",
       "source_location": "L11"
     },
     {
@@ -420,7 +444,7 @@
       "file_type": "code",
       "norm_label": "calculatemonthlysummary()",
       "source_file": "src/utils/incomeMath.ts",
-      "source_location": "L90"
+      "source_location": "L105"
     },
     {
       "id": "src_utils_incomemath_calculateoverallsummary",
@@ -432,7 +456,31 @@
       "file_type": "code",
       "norm_label": "calculateoverallsummary()",
       "source_file": "src/utils/incomeMath.ts",
-      "source_location": "L152"
+      "source_location": "L177"
+    },
+    {
+      "id": "src_utils_incomemath_formatthaifulldate",
+      "label": "formatThaiFullDate()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Dashboard/Dashboard.tsx",
+      "file_type": "code",
+      "norm_label": "formatthaifulldate()",
+      "source_file": "src/utils/incomeMath.ts",
+      "source_location": "L74"
+    },
+    {
+      "id": "src_utils_incomemath_hasnotetag",
+      "label": "hasNoteTag()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Dashboard/Dashboard.tsx",
+      "file_type": "code",
+      "norm_label": "hasnotetag()",
+      "source_file": "src/utils/incomeMath.ts",
+      "source_location": "L90"
     },
     {
       "id": "src_utils_storage_exportincomestojsonfile",
@@ -555,18 +603,6 @@
       "source_location": "L32"
     },
     {
-      "id": "src_pages_dashboard_sections_incomeformcard_incomeformcard",
-      "label": "IncomeFormCard()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "IncomeFormCard.tsx",
-      "file_type": "code",
-      "norm_label": "incomeformcard()",
-      "source_file": "src/pages/Dashboard/sections/IncomeFormCard.tsx",
-      "source_location": "L31"
-    },
-    {
       "id": "src_pages_dashboard_sections_monthlychartsection_monthlychartsection",
       "label": "MonthlyChartSection()",
       "_callable": true,
@@ -615,30 +651,6 @@
       "source_location": "L120"
     },
     {
-      "id": "src_utils_expressionparser_parseincomeexpression",
-      "label": "parseIncomeExpression()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "IncomeFormCard.tsx",
-      "file_type": "code",
-      "norm_label": "parseincomeexpression()",
-      "source_file": "src/utils/expressionParser.ts",
-      "source_location": "L11"
-    },
-    {
-      "id": "src_utils_incomemath_formatthaifulldate",
-      "label": "formatThaiFullDate()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "IncomeFormCard.tsx",
-      "file_type": "code",
-      "norm_label": "formatthaifulldate()",
-      "source_file": "src/utils/incomeMath.ts",
-      "source_location": "L74"
-    },
-    {
       "id": "src_utils_incomemath_formatthaimonthyear",
       "label": "formatThaiMonthYear()",
       "_callable": true,
@@ -656,7 +668,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "main.tsx",
+      "community_name": "dayjs",
       "file_type": "code",
       "norm_label": "app()",
       "source_file": "src/App.tsx",
@@ -668,7 +680,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "main.tsx",
+      "community_name": "dayjs",
       "file_type": "code",
       "norm_label": "approutes()",
       "source_file": "src/routes/AppRoutes.tsx",
@@ -1533,17 +1545,6 @@
       "source_location": "L1"
     },
     {
-      "id": "ref_dayjs",
-      "label": "dayjs",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "IncomeFormCard.tsx",
-      "file_type": "concept",
-      "norm_label": "dayjs",
-      "source_file": "package.json",
-      "source_location": "L13"
-    },
-    {
       "id": "ref_lucide_react",
       "label": "lucide-react",
       "_origin": "ast",
@@ -1553,6 +1554,17 @@
       "norm_label": "lucide-react",
       "source_file": "package.json",
       "source_location": "L15"
+    },
+    {
+      "id": "ref_react",
+      "label": "react",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "IncomeFormCard.tsx",
+      "file_type": "concept",
+      "norm_label": "react",
+      "source_file": "package.json",
+      "source_location": "L16"
     },
     {
       "id": "tsconfig_app",
@@ -2065,7 +2077,7 @@
       "label": "App.tsx",
       "_origin": "ast",
       "community": 6,
-      "community_name": "main.tsx",
+      "community_name": "dayjs",
       "file_type": "code",
       "norm_label": "app.tsx",
       "source_file": "src/App.tsx",
@@ -2076,7 +2088,7 @@
       "label": "main.tsx",
       "_origin": "ast",
       "community": 6,
-      "community_name": "main.tsx",
+      "community_name": "dayjs",
       "file_type": "code",
       "norm_label": "main.tsx",
       "source_file": "src/main.tsx",
@@ -2087,7 +2099,7 @@
       "label": "pages/Dashboard.tsx",
       "_origin": "ast",
       "community": 6,
-      "community_name": "main.tsx",
+      "community_name": "dayjs",
       "file_type": "code",
       "norm_label": "pages/dashboard.tsx",
       "source_file": "src/pages/Dashboard.tsx",
@@ -2098,7 +2110,7 @@
       "label": "AppRoutes.tsx",
       "_origin": "ast",
       "community": 6,
-      "community_name": "main.tsx",
+      "community_name": "dayjs",
       "file_type": "code",
       "norm_label": "approutes.tsx",
       "source_file": "src/routes/AppRoutes.tsx",
@@ -2109,7 +2121,7 @@
       "label": "paths.ts",
       "_origin": "ast",
       "community": 6,
-      "community_name": "main.tsx",
+      "community_name": "dayjs",
       "file_type": "code",
       "norm_label": "paths.ts",
       "source_file": "src/routes/paths.ts",
@@ -2120,29 +2132,29 @@
       "label": "ROUTE_PATHS",
       "_origin": "ast",
       "community": 6,
-      "community_name": "main.tsx",
+      "community_name": "dayjs",
       "file_type": "code",
       "norm_label": "route_paths",
       "source_file": "src/routes/paths.ts",
       "source_location": "L2"
     },
     {
-      "id": "ref_react",
-      "label": "react",
+      "id": "ref_dayjs",
+      "label": "dayjs",
       "_origin": "ast",
       "community": 6,
-      "community_name": "main.tsx",
+      "community_name": "dayjs",
       "file_type": "concept",
-      "norm_label": "react",
+      "norm_label": "dayjs",
       "source_file": "package.json",
-      "source_location": "L16"
+      "source_location": "L13"
     },
     {
       "id": "ref_react_dom",
       "label": "react-dom",
       "_origin": "ast",
       "community": 6,
-      "community_name": "main.tsx",
+      "community_name": "dayjs",
       "file_type": "concept",
       "norm_label": "react-dom",
       "source_file": "package.json",
@@ -2153,7 +2165,7 @@
       "label": "react-router-dom",
       "_origin": "ast",
       "community": 6,
-      "community_name": "main.tsx",
+      "community_name": "dayjs",
       "file_type": "concept",
       "norm_label": "react-router-dom",
       "source_file": "package.json",
@@ -2335,7 +2347,7 @@
       "label": "src_index",
       "_origin": "semantic",
       "community": 6,
-      "community_name": "main.tsx",
+      "community_name": "dayjs",
       "external": true,
       "file_type": "concept",
       "norm_label": "src_index",
@@ -2509,7 +2521,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L311",
+      "source_location": "L313",
       "weight": 1.0
     },
     {
@@ -2521,7 +2533,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L358",
+      "source_location": "L360",
       "weight": 1.0
     },
     {
@@ -2533,7 +2545,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L366",
+      "source_location": "L368",
       "weight": 1.0
     },
     {
@@ -2545,7 +2557,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L391",
+      "source_location": "L393",
       "weight": 1.0
     },
     {
@@ -2557,7 +2569,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L407",
+      "source_location": "L409",
       "weight": 1.0
     },
     {
@@ -2809,7 +2821,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/sections/SummaryCards.tsx",
-      "source_location": "L206",
+      "source_location": "L224",
       "weight": 1.0
     },
     {
@@ -2993,6 +3005,30 @@
       "weight": 1.0
     },
     {
+      "source": "src_utils_incomemath_calculatemonthlysummary",
+      "target": "src_utils_incomemath_hasnotetag",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/utils/incomeMath.ts",
+      "source_location": "L140",
+      "weight": 1.0
+    },
+    {
+      "source": "src_utils_incomemath_calculateoverallsummary",
+      "target": "src_utils_incomemath_hasnotetag",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/utils/incomeMath.ts",
+      "source_location": "L192",
+      "weight": 1.0
+    },
+    {
       "source": "src_utils_incomemath_calculateoverallsummary",
       "target": "src_utils_incomemath_formatthaimonthyear",
       "relation": "calls",
@@ -3001,7 +3037,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/utils/incomeMath.ts",
-      "source_location": "L189",
+      "source_location": "L222",
       "weight": 1.0
     },
     {
@@ -3109,7 +3145,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "src/pages/Dashboard/types.ts",
-      "source_location": "L80",
+      "source_location": "L84",
       "weight": 1.0
     },
     {
@@ -5972,7 +6008,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/pages/Dashboard/types.ts",
-      "source_location": "L74",
+      "source_location": "L78",
       "weight": 1.0
     },
     {
@@ -6115,7 +6151,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/types/income.ts",
-      "source_location": "L77",
+      "source_location": "L81",
       "weight": 1.0
     },
     {
@@ -6126,7 +6162,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/types/income.ts",
-      "source_location": "L89",
+      "source_location": "L93",
       "weight": 1.0
     },
     {
@@ -6252,6 +6288,17 @@
     },
     {
       "source": "src_utils_incomemath",
+      "target": "src_utils_incomemath_calculatemonthlysummary",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/utils/incomeMath.ts",
+      "source_location": "L105",
+      "weight": 1.0
+    },
+    {
+      "source": "src_utils_incomemath",
       "target": "src_utils_incomemath_thai_months_full",
       "relation": "contains",
       "_origin": "ast",
@@ -6269,7 +6316,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/utils/incomeMath.ts",
-      "source_location": "L152",
+      "source_location": "L177",
       "weight": 1.0
     },
     {
@@ -6318,7 +6365,7 @@
     },
     {
       "source": "src_utils_incomemath",
-      "target": "src_utils_incomemath_calculatemonthlysummary",
+      "target": "src_utils_incomemath_hasnotetag",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -6846,5 +6893,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "79c5a81cc4d0f8aaf2bc09d341e91e2e1eb46f06"
+  "built_at_commit": "4db258cd857ee902e9bd7ab8c0a576241b786131"
 }

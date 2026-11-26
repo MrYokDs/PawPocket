@@ -1,8 +1,8 @@
 {
   "package.json": {
-    "mtime": 1795704482.1689107,
-    "seen": 1795704501.8674786,
-    "ast_hash": "03c7991e82c8e9f52ba00723e09f189d",
+    "mtime": 1795705237.46658,
+    "seen": 1795705255.6398084,
+    "ast_hash": "59b42996026b9bdc01258d31927c4a36",
     "semantic_hash": ""
   },
   "src/App.tsx": {
@@ -42,9 +42,9 @@
     "semantic_hash": ""
   },
   "src/pages/Dashboard/Dashboard.tsx": {
-    "mtime": 1795704481.0184588,
-    "seen": 1795704501.8674908,
-    "ast_hash": "a0fc38b65609a13fd7cad1e2557c44a4",
+    "mtime": 1795705236.4549296,
+    "seen": 1795705255.6398182,
+    "ast_hash": "1ff5eb16412c61b6a75c261bad0e024f",
     "semantic_hash": ""
   },
   "src/pages/Dashboard/index.ts": {
@@ -60,9 +60,9 @@
     "semantic_hash": ""
   },
   "src/pages/Dashboard/sections/IncomeFormCard.tsx": {
-    "mtime": 1795704230.0198777,
-    "seen": 1795704396.364334,
-    "ast_hash": "f6d482425daa46b3d5190d7d67e401cc",
+    "mtime": 1795705232.5840428,
+    "seen": 1795705255.6398222,
+    "ast_hash": "111cfa13bec21ecb4bf05743e86f24b6",
     "semantic_hash": ""
   },
   "src/pages/Dashboard/sections/MonthlyChartSection.tsx": {
@@ -72,15 +72,15 @@
     "semantic_hash": ""
   },
   "src/pages/Dashboard/sections/SummaryCards.tsx": {
-    "mtime": 1795702308.7332995,
-    "seen": 1795703006.2365513,
-    "ast_hash": "8eab28a0fb263cbaff84482cededdcec",
+    "mtime": 1795705235.448151,
+    "seen": 1795705255.6398249,
+    "ast_hash": "b27133f8878ef9dd360c8a0b6b3c79f8",
     "semantic_hash": ""
   },
   "src/pages/Dashboard/types.ts": {
-    "mtime": 1795704371.700895,
-    "seen": 1795704396.3643377,
-    "ast_hash": "e7915443eee6f72fd4354890a9dcf86b",
+    "mtime": 1795705231.2125947,
+    "seen": 1795705255.6398253,
+    "ast_hash": "6c6d22133e8130069132b5cae9ad13f6",
     "semantic_hash": ""
   },
   "src/routes/AppRoutes.tsx": {
@@ -102,9 +102,9 @@
     "semantic_hash": ""
   },
   "src/types/income.ts": {
-    "mtime": 1795704079.5393007,
-    "seen": 1795704108.9150085,
-    "ast_hash": "31f1c49271e8042683a2a9171981cc38",
+    "mtime": 1795705228.934595,
+    "seen": 1795705255.6398282,
+    "ast_hash": "ac024c76d87bc7c4d26a5f4634a5f958",
     "semantic_hash": ""
   },
   "src/utils/expressionParser.ts": {
@@ -120,9 +120,9 @@
     "semantic_hash": ""
   },
   "src/utils/incomeMath.ts": {
-    "mtime": 1795702309.3036098,
-    "seen": 1795703006.236556,
-    "ast_hash": "ffcf005ac9ca7b87e010e7c8874fb746",
+    "mtime": 1795705230.308017,
+    "seen": 1795705255.6398304,
+    "ast_hash": "7fdf9a154dfb684d160537c6493ae5e0",
     "semantic_hash": ""
   },
   "src/utils/storage.ts": {
@@ -234,9 +234,15 @@
     "semantic_hash": ""
   },
   "src/pages/Dashboard/sections/MobileSummaryBar.tsx": {
-    "mtime": 1795704456.3903694,
-    "seen": 1795704501.867495,
-    "ast_hash": "91ae8e719836ffcaae356df8608bf89e",
+    "mtime": 1795705233.3262732,
+    "seen": 1795705255.6398234,
+    "ast_hash": "50fc31ca629250d161ca8cc127527f6b",
+    "semantic_hash": ""
+  },
+  "data/incomes.json": {
+    "mtime": 1795705225.7183695,
+    "seen": 1795705255.6398036,
+    "ast_hash": "cd2b6b5434aa38bbc89f0f1ca1aad48b",
     "semantic_hash": ""
   }
 }

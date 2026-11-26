@@ -301,6 +301,8 @@ export default function Dashboard() {
             selectedAmount={selectedEntry?.totalAmount ?? 0}
             monthlyTotal={monthlySummary.totalAmount}
             monthlyRecordedDays={monthlySummary.recordedDaysCount}
+            monthlyOtDays={monthlySummary.otDaysCount}
+            monthlyO1000Days={monthlySummary.o1000DaysCount}
             overallTotal={overallSummary.totalAmount}
           />
         </div>

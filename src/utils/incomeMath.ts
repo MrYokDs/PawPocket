@@ -81,6 +81,21 @@ export function formatThaiFullDate(dateStr: string): string {
 }
 
 /**
+ * ตรวจสอบว่าข้อความหมายเหตุมีแท็กที่ระบุอยู่หรือไม่
+ *
+ * @param note ข้อความหมายเหตุ
+ * @param tag ชื่อแท็ก เช่น "OT" หรือ "O1000"
+ * @returns true หากพบแท็กในข้อความ
+ */
+function hasNoteTag(note: string | undefined, tag: string): boolean {
+  if (!note) return false;
+  return note
+    .trim()
+    .split(/\s+/)
+    .includes(tag);
+}
+
+/**
  * คำนวณสถิติสรุปรายเดือนจากข้อมูลรายได้ทั้งหมด
  *
  * @param entries พจนานุกรมข้อมูลรายได้ทั้งหมด
@@ -97,6 +112,8 @@ export function calculateMonthlySummary(
 
   let totalAmount = 0;
   let recordedDaysCount = 0;
+  let otDaysCount = 0;
+  let o1000DaysCount = 0;
   let bestDay: DailyStat | null = null;
 
   for (let day = 1; day <= daysInMonth; day += 1) {
@@ -120,6 +137,12 @@ export function calculateMonthlySummary(
       totalAmount += amount;
       if (amount > 0) {
         recordedDaysCount += 1;
+        if (hasNoteTag(entry.note, 'O1000')) {
+          o1000DaysCount += 1;
+        }
+        if (hasNoteTag(entry.note, 'OT')) {
+          otDaysCount += 1;
+        }
         if (!bestDay || amount > bestDay.totalAmount) {
           bestDay = stat;
         }
@@ -138,6 +161,8 @@ export function calculateMonthlySummary(
     totalAmount: roundedTotal,
     averagePerRecordedDay,
     recordedDaysCount,
+    otDaysCount,
+    o1000DaysCount,
     bestDay,
     dailyStats,
   };
@@ -153,6 +178,8 @@ export function calculateOverallSummary(entries: IncomeMap): OverallSummary {
   const allEntries = Object.values(entries);
   let totalAmount = 0;
   let totalRecordedDays = 0;
+  let totalOtDays = 0;
+  let totalO1000Days = 0;
 
   const monthBuckets = new Map<string, { totalAmount: number; recordedDaysCount: number }>();
 
@@ -162,6 +189,12 @@ export function calculateOverallSummary(entries: IncomeMap): OverallSummary {
     totalAmount += entry.totalAmount;
     if (entry.totalAmount > 0) {
       totalRecordedDays += 1;
+      if (hasNoteTag(entry.note, 'O1000')) {
+        totalO1000Days += 1;
+      }
+      if (hasNoteTag(entry.note, 'OT')) {
+        totalOtDays += 1;
+      }
     }
 
     const monthKey = entry.date.slice(0, 7);
@@ -194,6 +227,8 @@ export function calculateOverallSummary(entries: IncomeMap): OverallSummary {
   return {
     totalAmount: roundedTotal,
     totalRecordedDays,
+    totalOtDays,
+    totalO1000Days,
     averagePerRecordedDay,
     monthlyHistory,
   };

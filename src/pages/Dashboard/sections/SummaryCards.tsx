@@ -106,11 +106,20 @@ export default function SummaryCards({
               </span>
             </div>
             <div className="rounded-2xl bg-emerald-50/70 px-3 py-2">
-              <span className="block text-[11px] text-[#557a67]">วันที่มีรายได้</span>
+              <span className="block text-[11px] text-[#557a67]">มีรายได้จริง</span>
               <span className="text-sm font-bold text-emerald-700">
                 {monthlySummary.recordedDaysCount} วัน
               </span>
             </div>
+          </div>
+
+          <div className="mt-2 flex flex-wrap items-center gap-1.5 text-[11px] font-semibold">
+            <span className="rounded-full bg-pink-100 px-2.5 py-0.5 text-pink-700">
+              #OT {monthlySummary.otDaysCount} วัน
+            </span>
+            <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-amber-800">
+              #O1000 {monthlySummary.o1000DaysCount} วัน
+            </span>
           </div>
         </div>
 
@@ -162,6 +171,15 @@ export default function SummaryCards({
               {formatCurrency(overallSummary.averagePerRecordedDay)} / วัน
             </span>
           </p>
+
+          <div className="mt-2 flex flex-wrap items-center gap-1.5 text-[11px] font-semibold">
+            <span className="rounded-full bg-pink-100 px-2.5 py-0.5 text-pink-700">
+              #OT {overallSummary.totalOtDays} วัน
+            </span>
+            <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-amber-800">
+              #O1000 {overallSummary.totalO1000Days} วัน
+            </span>
+          </div>
         </div>
 
         {/* เปรียบเทียบรายเดือนย้อนหลัง */}

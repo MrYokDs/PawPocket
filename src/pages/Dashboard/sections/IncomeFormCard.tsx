@@ -36,13 +36,13 @@ export default function IncomeFormCard({
   onDeleteEntry,
 }: IncomeFormCardProps) {
   const [expression, setExpression] = useState('');
-  const [note, setNote] = useState('');
+  const [note, setNote] = useState('OT');
   const [confirmDelete, setConfirmDelete] = useState(false);
 
-  // เมื่อเปลี่ยนวันที่หรือข้อมูลเดิมเปลี่ยน ให้ดึงสูตรและหมายเหตุเดิมมาแสดงอัตโนมัติ
+  // เมื่อเปลี่ยนวันที่หรือข้อมูลเดิมเปลี่ยน ให้ดึงสูตรและหมายเหตุเดิมมาแสดง (หากเป็นวันใหม่ให้เริ่มต้นเป็นแท็ก OT)
   useEffect(() => {
     setExpression(existingEntry?.expression ?? '');
-    setNote(existingEntry?.note ?? '');
+    setNote(existingEntry ? (existingEntry.note ?? '') : 'OT');
     setConfirmDelete(false);
   }, [selectedDate, existingEntry]);
 

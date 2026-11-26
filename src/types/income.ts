@@ -67,6 +67,10 @@ export interface MonthlySummary {
   averagePerRecordedDay: number;
   /** จำนวนวันที่มีการบันทึกรายได้ในเดือนนั้น */
   recordedDaysCount: number;
+  /** จำนวนวันที่มีรายได้และติดแท็ก OT ในเดือนนั้น */
+  otDaysCount: number;
+  /** จำนวนวันที่มีรายได้และติดแท็ก O1000 ในเดือนนั้น */
+  o1000DaysCount: number;
   /** วันที่ได้รายได้สูงที่สุดในเดือน (null หากยังไม่มีข้อมูล) */
   bestDay: DailyStat | null;
   /** รายการสถิติครบทุกวันในเดือน */
@@ -91,6 +95,10 @@ export interface OverallSummary {
   totalAmount: number;
   /** จำนวนวันที่บันทึกทั้งหมด */
   totalRecordedDays: number;
+  /** จำนวนวันที่มีรายได้และติดแท็ก OT ทั้งหมด */
+  totalOtDays: number;
+  /** จำนวนวันที่มีรายได้และติดแท็ก O1000 ทั้งหมด */
+  totalO1000Days: number;
   /** ค่าเฉลี่ยต่อวันโดยรวม */
   averagePerRecordedDay: number;
   /** รายการสรุปรายเดือนเรียงจากเดือนล่าสุดย้อนหลัง */

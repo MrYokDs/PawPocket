@@ -64,8 +64,12 @@ export interface MobileSummaryBarProps {
   selectedAmount: number;
   /** ยอดรวมทั้งเดือนที่กำลังดู */
   monthlyTotal: number;
-  /** จำนวนวันที่มีรายได้ในเดือนนี้ */
+  /** จำนวนวันที่มีรายได้จริงในเดือนนี้ */
   monthlyRecordedDays: number;
+  /** จำนวนวันแท็ก OT ในเดือนนี้ */
+  monthlyOtDays: number;
+  /** จำนวนวันแท็ก O1000 ในเดือนนี้ */
+  monthlyO1000Days: number;
   /** ยอดรวมสะสมทั้งหมด */
   overallTotal: number;
 }
