@@ -10,7 +10,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Dashboard/Dashboard.tsx",
+      "community_name": "githubSync.ts",
       "file_type": "code",
       "norm_label": "gitsyncmodalprops",
       "source_file": "src/components/GitSyncModal.tsx",
@@ -23,7 +23,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Dashboard/Dashboard.tsx",
+      "community_name": "githubSync.ts",
       "file_type": "code",
       "norm_label": "gitsyncconfig",
       "source_file": "src/types/gitSync.ts",
@@ -36,7 +36,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Dashboard/Dashboard.tsx",
+      "community_name": "githubSync.ts",
       "file_type": "code",
       "norm_label": "syncstatus",
       "source_file": "src/types/gitSync.ts",
@@ -49,24 +49,11 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Dashboard/Dashboard.tsx",
+      "community_name": "githubSync.ts",
       "file_type": "code",
       "norm_label": "syncstatusstate",
       "source_file": "src/types/gitSync.ts",
       "source_location": "L18"
-    },
-    {
-      "id": "src_types_income_incomemap",
-      "label": "IncomeMap",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Dashboard/Dashboard.tsx",
-      "file_type": "code",
-      "norm_label": "incomemap",
-      "source_file": "src/types/income.ts",
-      "source_location": "L16"
     },
     {
       "id": "src_utils_githubsync_githubcontentresponse",
@@ -75,7 +62,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Dashboard/Dashboard.tsx",
+      "community_name": "githubSync.ts",
       "file_type": "code",
       "norm_label": "githubcontentresponse",
       "source_file": "src/utils/githubSync.ts",
@@ -88,11 +75,37 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Dashboard/Dashboard.tsx",
+      "community_name": "githubSync.ts",
       "file_type": "code",
       "norm_label": "githubputresponse",
       "source_file": "src/utils/githubSync.ts",
       "source_location": "L14"
+    },
+    {
+      "id": "src_components_catmascot_catmascotprops",
+      "label": "CatMascotProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "Dashboard/Dashboard.tsx",
+      "file_type": "code",
+      "norm_label": "catmascotprops",
+      "source_file": "src/components/CatMascot.tsx",
+      "source_location": "L5"
+    },
+    {
+      "id": "src_components_catmascot_catmood",
+      "label": "CatMood",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "Dashboard/Dashboard.tsx",
+      "file_type": "code",
+      "norm_label": "catmood",
+      "source_file": "src/components/CatMascot.tsx",
+      "source_location": "L3"
     },
     {
       "id": "src_components_rainbowcard_rainbowcardprops",
@@ -101,7 +114,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "IncomeFormCard.tsx",
+      "community_name": "Dashboard/Dashboard.tsx",
       "file_type": "code",
       "norm_label": "rainbowcardprops",
       "source_file": "src/components/RainbowCard.tsx",
@@ -225,6 +238,19 @@
       "source_location": "L2"
     },
     {
+      "id": "src_types_income_incomemap",
+      "label": "IncomeMap",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "incomeMath.ts",
+      "file_type": "code",
+      "norm_label": "incomemap",
+      "source_file": "src/types/income.ts",
+      "source_location": "L16"
+    },
+    {
       "id": "src_types_income_monthlycomparisonitem",
       "label": "MonthlyComparisonItem",
       "_callable": true,
@@ -303,78 +329,28 @@
       "source_location": "L31"
     },
     {
-      "id": "src_components_catmascot_catmascotprops",
-      "label": "CatMascotProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "CatMascot.tsx",
-      "file_type": "code",
-      "norm_label": "catmascotprops",
-      "source_file": "src/components/CatMascot.tsx",
-      "source_location": "L5"
-    },
-    {
-      "id": "src_components_catmascot_catmood",
-      "label": "CatMood",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "CatMascot.tsx",
-      "file_type": "code",
-      "norm_label": "catmood",
-      "source_file": "src/components/CatMascot.tsx",
-      "source_location": "L3"
-    },
-    {
-      "id": "src_components_gitsyncmodal_gitsyncmodal",
-      "label": "GitSyncModal()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Dashboard/Dashboard.tsx",
-      "file_type": "code",
-      "norm_label": "gitsyncmodal()",
-      "source_file": "src/components/GitSyncModal.tsx",
-      "source_location": "L48"
-    },
-    {
-      "id": "src_pages_dashboard_dashboard_dashboard",
-      "label": "Dashboard()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Dashboard/Dashboard.tsx",
-      "file_type": "code",
-      "norm_label": "dashboard()",
-      "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L46"
-    },
-    {
-      "id": "src_pages_dashboard_sections_mobilesummarybar_mobilesummarybar",
-      "label": "MobileSummaryBar()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Dashboard/Dashboard.tsx",
-      "file_type": "code",
-      "norm_label": "mobilesummarybar()",
-      "source_file": "src/pages/Dashboard/sections/MobileSummaryBar.tsx",
-      "source_location": "L11"
-    },
-    {
       "id": "src_utils_githubsync_buildcontentsurl",
       "label": "buildContentsUrl()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Dashboard/Dashboard.tsx",
+      "community_name": "githubSync.ts",
       "file_type": "code",
       "norm_label": "buildcontentsurl()",
       "source_file": "src/utils/githubSync.ts",
       "source_location": "L49"
+    },
+    {
+      "id": "src_utils_githubsync_buildfreshgeturl",
+      "label": "buildFreshGetUrl()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "githubSync.ts",
+      "file_type": "code",
+      "norm_label": "buildfreshgeturl()",
+      "source_file": "src/utils/githubSync.ts",
+      "source_location": "L66"
     },
     {
       "id": "src_utils_githubsync_buildheaders",
@@ -382,11 +358,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Dashboard/Dashboard.tsx",
+      "community_name": "githubSync.ts",
       "file_type": "code",
       "norm_label": "buildheaders()",
       "source_file": "src/utils/githubSync.ts",
-      "source_location": "L66"
+      "source_location": "L78"
+    },
+    {
+      "id": "src_utils_githubsync_fetchlatestfilesha",
+      "label": "fetchLatestFileSha()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "githubSync.ts",
+      "file_type": "code",
+      "norm_label": "fetchlatestfilesha()",
+      "source_file": "src/utils/githubSync.ts",
+      "source_location": "L93"
     },
     {
       "id": "src_utils_githubsync_formatgithuberror",
@@ -394,11 +382,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Dashboard/Dashboard.tsx",
+      "community_name": "githubSync.ts",
       "file_type": "code",
       "norm_label": "formatgithuberror()",
       "source_file": "src/utils/githubSync.ts",
-      "source_location": "L192"
+      "source_location": "L225"
     },
     {
       "id": "src_utils_githubsync_pullincomesfromgithub",
@@ -406,11 +394,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Dashboard/Dashboard.tsx",
+      "community_name": "githubSync.ts",
       "file_type": "code",
       "norm_label": "pullincomesfromgithub()",
       "source_file": "src/utils/githubSync.ts",
-      "source_location": "L82"
+      "source_location": "L119"
     },
     {
       "id": "src_utils_githubsync_pushincomestogithub",
@@ -418,11 +406,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Dashboard/Dashboard.tsx",
+      "community_name": "githubSync.ts",
       "file_type": "code",
       "norm_label": "pushincomestogithub()",
       "source_file": "src/utils/githubSync.ts",
-      "source_location": "L125"
+      "source_location": "L163"
     },
     {
       "id": "src_utils_githubsync_validategitconfig",
@@ -430,71 +418,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Dashboard/Dashboard.tsx",
+      "community_name": "githubSync.ts",
       "file_type": "code",
       "norm_label": "validategitconfig()",
       "source_file": "src/utils/githubSync.ts",
       "source_location": "L28"
-    },
-    {
-      "id": "src_utils_incomemath_calculatemonthlysummary",
-      "label": "calculateMonthlySummary()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Dashboard/Dashboard.tsx",
-      "file_type": "code",
-      "norm_label": "calculatemonthlysummary()",
-      "source_file": "src/utils/incomeMath.ts",
-      "source_location": "L105"
-    },
-    {
-      "id": "src_utils_incomemath_calculateoverallsummary",
-      "label": "calculateOverallSummary()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Dashboard/Dashboard.tsx",
-      "file_type": "code",
-      "norm_label": "calculateoverallsummary()",
-      "source_file": "src/utils/incomeMath.ts",
-      "source_location": "L177"
-    },
-    {
-      "id": "src_utils_incomemath_hasnotetag",
-      "label": "hasNoteTag()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Dashboard/Dashboard.tsx",
-      "file_type": "code",
-      "norm_label": "hasnotetag()",
-      "source_file": "src/utils/incomeMath.ts",
-      "source_location": "L90"
-    },
-    {
-      "id": "src_utils_storage_exportincomestojsonfile",
-      "label": "exportIncomesToJsonFile()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Dashboard/Dashboard.tsx",
-      "file_type": "code",
-      "norm_label": "exportincomestojsonfile()",
-      "source_file": "src/utils/storage.ts",
-      "source_location": "L137"
-    },
-    {
-      "id": "src_utils_storage_loadgitsyncconfig",
-      "label": "loadGitSyncConfig()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Dashboard/Dashboard.tsx",
-      "file_type": "code",
-      "norm_label": "loadgitsyncconfig()",
-      "source_file": "src/utils/storage.ts",
-      "source_location": "L49"
     },
     {
       "id": "src_utils_storage_loadincomeentries",
@@ -502,7 +430,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Dashboard/Dashboard.tsx",
+      "community_name": "githubSync.ts",
       "file_type": "code",
       "norm_label": "loadincomeentries()",
       "source_file": "src/utils/storage.ts",
@@ -514,7 +442,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Dashboard/Dashboard.tsx",
+      "community_name": "githubSync.ts",
       "file_type": "code",
       "norm_label": "normalizeincomedata()",
       "source_file": "src/utils/storage.ts",
@@ -526,35 +454,47 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "Dashboard/Dashboard.tsx",
+      "community_name": "githubSync.ts",
       "file_type": "code",
       "norm_label": "parseimportedincomesjson()",
       "source_file": "src/utils/storage.ts",
       "source_location": "L162"
     },
     {
-      "id": "src_utils_storage_savegitsyncconfig",
-      "label": "saveGitSyncConfig()",
+      "id": "src_components_catmascot_catmascot",
+      "label": "CatMascot()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 2,
       "community_name": "Dashboard/Dashboard.tsx",
       "file_type": "code",
-      "norm_label": "savegitsyncconfig()",
-      "source_file": "src/utils/storage.ts",
-      "source_location": "L72"
+      "norm_label": "catmascot()",
+      "source_file": "src/components/CatMascot.tsx",
+      "source_location": "L58"
     },
     {
-      "id": "src_utils_storage_saveincomeentries",
-      "label": "saveIncomeEntries()",
+      "id": "src_components_catmascot_resolvecatstate",
+      "label": "resolveCatState()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 2,
       "community_name": "Dashboard/Dashboard.tsx",
       "file_type": "code",
-      "norm_label": "saveincomeentries()",
-      "source_file": "src/utils/storage.ts",
-      "source_location": "L40"
+      "norm_label": "resolvecatstate()",
+      "source_file": "src/components/CatMascot.tsx",
+      "source_location": "L24"
+    },
+    {
+      "id": "src_components_gitsyncmodal_gitsyncmodal",
+      "label": "GitSyncModal()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "Dashboard/Dashboard.tsx",
+      "file_type": "code",
+      "norm_label": "gitsyncmodal()",
+      "source_file": "src/components/GitSyncModal.tsx",
+      "source_location": "L48"
     },
     {
       "id": "src_components_rainbowcard_rainbowcard",
@@ -562,11 +502,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "IncomeFormCard.tsx",
+      "community_name": "Dashboard/Dashboard.tsx",
       "file_type": "code",
       "norm_label": "rainbowcard()",
       "source_file": "src/components/RainbowCard.tsx",
       "source_location": "L20"
+    },
+    {
+      "id": "src_pages_dashboard_dashboard_dashboard",
+      "label": "Dashboard()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "Dashboard/Dashboard.tsx",
+      "file_type": "code",
+      "norm_label": "dashboard()",
+      "source_file": "src/pages/Dashboard/Dashboard.tsx",
+      "source_location": "L46"
     },
     {
       "id": "src_pages_dashboard_sections_dailyincomelist_dailyincomelist",
@@ -574,7 +526,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "IncomeFormCard.tsx",
+      "community_name": "Dashboard/Dashboard.tsx",
       "file_type": "code",
       "norm_label": "dailyincomelist()",
       "source_file": "src/pages/Dashboard/sections/DailyIncomeList.tsx",
@@ -586,7 +538,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "IncomeFormCard.tsx",
+      "community_name": "Dashboard/Dashboard.tsx",
       "file_type": "code",
       "norm_label": "incomecalendar()",
       "source_file": "src/pages/Dashboard/sections/IncomeCalendar.tsx",
@@ -598,11 +550,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "IncomeFormCard.tsx",
+      "community_name": "Dashboard/Dashboard.tsx",
       "file_type": "code",
       "norm_label": "incomeformcard()",
       "source_file": "src/pages/Dashboard/sections/IncomeFormCard.tsx",
       "source_location": "L32"
+    },
+    {
+      "id": "src_pages_dashboard_sections_mobilesummarybar_mobilesummarybar",
+      "label": "MobileSummaryBar()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "Dashboard/Dashboard.tsx",
+      "file_type": "code",
+      "norm_label": "mobilesummarybar()",
+      "source_file": "src/pages/Dashboard/sections/MobileSummaryBar.tsx",
+      "source_location": "L11"
     },
     {
       "id": "src_pages_dashboard_sections_monthlychartsection_monthlychartsection",
@@ -610,7 +574,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "IncomeFormCard.tsx",
+      "community_name": "Dashboard/Dashboard.tsx",
       "file_type": "code",
       "norm_label": "monthlychartsection()",
       "source_file": "src/pages/Dashboard/sections/MonthlyChartSection.tsx",
@@ -622,7 +586,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "IncomeFormCard.tsx",
+      "community_name": "Dashboard/Dashboard.tsx",
       "file_type": "code",
       "norm_label": "summarycards()",
       "source_file": "src/pages/Dashboard/sections/SummaryCards.tsx",
@@ -634,7 +598,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "IncomeFormCard.tsx",
+      "community_name": "Dashboard/Dashboard.tsx",
       "file_type": "code",
       "norm_label": "formatcompactcurrency()",
       "source_file": "src/utils/expressionParser.ts",
@@ -646,7 +610,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "IncomeFormCard.tsx",
+      "community_name": "Dashboard/Dashboard.tsx",
       "file_type": "code",
       "norm_label": "formatcurrency()",
       "source_file": "src/utils/expressionParser.ts",
@@ -658,11 +622,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "IncomeFormCard.tsx",
+      "community_name": "Dashboard/Dashboard.tsx",
       "file_type": "code",
       "norm_label": "parseincomeexpression()",
       "source_file": "src/utils/expressionParser.ts",
       "source_location": "L11"
+    },
+    {
+      "id": "src_utils_incomemath_calculateoverallsummary",
+      "label": "calculateOverallSummary()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "Dashboard/Dashboard.tsx",
+      "file_type": "code",
+      "norm_label": "calculateoverallsummary()",
+      "source_file": "src/utils/incomeMath.ts",
+      "source_location": "L177"
     },
     {
       "id": "src_utils_incomemath_formatthaifulldate",
@@ -670,7 +646,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "IncomeFormCard.tsx",
+      "community_name": "Dashboard/Dashboard.tsx",
       "file_type": "code",
       "norm_label": "formatthaifulldate()",
       "source_file": "src/utils/incomeMath.ts",
@@ -682,11 +658,83 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "IncomeFormCard.tsx",
+      "community_name": "Dashboard/Dashboard.tsx",
       "file_type": "code",
       "norm_label": "formatthaimonthyear()",
       "source_file": "src/utils/incomeMath.ts",
       "source_location": "L60"
+    },
+    {
+      "id": "src_utils_storage_exportincomestojsonfile",
+      "label": "exportIncomesToJsonFile()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "Dashboard/Dashboard.tsx",
+      "file_type": "code",
+      "norm_label": "exportincomestojsonfile()",
+      "source_file": "src/utils/storage.ts",
+      "source_location": "L137"
+    },
+    {
+      "id": "src_utils_storage_loadgitsyncconfig",
+      "label": "loadGitSyncConfig()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "Dashboard/Dashboard.tsx",
+      "file_type": "code",
+      "norm_label": "loadgitsyncconfig()",
+      "source_file": "src/utils/storage.ts",
+      "source_location": "L49"
+    },
+    {
+      "id": "src_utils_storage_savegitsyncconfig",
+      "label": "saveGitSyncConfig()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "Dashboard/Dashboard.tsx",
+      "file_type": "code",
+      "norm_label": "savegitsyncconfig()",
+      "source_file": "src/utils/storage.ts",
+      "source_location": "L72"
+    },
+    {
+      "id": "src_utils_storage_saveincomeentries",
+      "label": "saveIncomeEntries()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "Dashboard/Dashboard.tsx",
+      "file_type": "code",
+      "norm_label": "saveincomeentries()",
+      "source_file": "src/utils/storage.ts",
+      "source_location": "L40"
+    },
+    {
+      "id": "src_utils_incomemath_calculatemonthlysummary",
+      "label": "calculateMonthlySummary()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "incomeMath.ts",
+      "file_type": "code",
+      "norm_label": "calculatemonthlysummary()",
+      "source_file": "src/utils/incomeMath.ts",
+      "source_location": "L105"
+    },
+    {
+      "id": "src_utils_incomemath_hasnotetag",
+      "label": "hasNoteTag()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "incomeMath.ts",
+      "file_type": "code",
+      "norm_label": "hasnotetag()",
+      "source_file": "src/utils/incomeMath.ts",
+      "source_location": "L90"
     },
     {
       "id": "src_app_app",
@@ -737,49 +785,14 @@
       "source_location": "L9"
     },
     {
-      "id": "src_components_catmascot_catmascot",
-      "label": "CatMascot()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "CatMascot.tsx",
-      "file_type": "code",
-      "norm_label": "catmascot()",
-      "source_file": "src/components/CatMascot.tsx",
-      "source_location": "L58"
-    },
-    {
-      "id": "src_components_catmascot_resolvecatstate",
-      "label": "resolveCatState()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "CatMascot.tsx",
-      "file_type": "code",
-      "norm_label": "resolvecatstate()",
-      "source_file": "src/components/CatMascot.tsx",
-      "source_location": "L24"
-    },
-    {
       "id": "src_components_gitsyncmodal",
       "label": "GitSyncModal.tsx",
       "_origin": "ast",
       "community": 0,
-      "community_name": "Dashboard/Dashboard.tsx",
+      "community_name": "githubSync.ts",
       "file_type": "code",
       "norm_label": "gitsyncmodal.tsx",
       "source_file": "src/components/GitSyncModal.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_pages_dashboard_dashboard",
-      "label": "Dashboard/Dashboard.tsx",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Dashboard/Dashboard.tsx",
-      "file_type": "code",
-      "norm_label": "dashboard/dashboard.tsx",
-      "source_file": "src/pages/Dashboard/Dashboard.tsx",
       "source_location": "L1"
     },
     {
@@ -787,7 +800,7 @@
       "label": "gitSync.ts",
       "_origin": "ast",
       "community": 0,
-      "community_name": "Dashboard/Dashboard.tsx",
+      "community_name": "githubSync.ts",
       "file_type": "code",
       "norm_label": "gitsync.ts",
       "source_file": "src/types/gitSync.ts",
@@ -798,7 +811,7 @@
       "label": "githubSync.ts",
       "_origin": "ast",
       "community": 0,
-      "community_name": "Dashboard/Dashboard.tsx",
+      "community_name": "githubSync.ts",
       "file_type": "code",
       "norm_label": "githubsync.ts",
       "source_file": "src/utils/githubSync.ts",
@@ -809,7 +822,7 @@
       "label": "storage.ts",
       "_origin": "ast",
       "community": 0,
-      "community_name": "Dashboard/Dashboard.tsx",
+      "community_name": "githubSync.ts",
       "file_type": "code",
       "norm_label": "storage.ts",
       "source_file": "src/utils/storage.ts",
@@ -820,22 +833,11 @@
       "label": "DEFAULT_GIT_SYNC_CONFIG",
       "_origin": "ast",
       "community": 0,
-      "community_name": "Dashboard/Dashboard.tsx",
+      "community_name": "githubSync.ts",
       "file_type": "code",
       "norm_label": "default_git_sync_config",
       "source_file": "src/utils/storage.ts",
       "source_location": "L10"
-    },
-    {
-      "id": "ref_js_base64",
-      "label": "js-base64",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Dashboard/Dashboard.tsx",
-      "file_type": "concept",
-      "norm_label": "js-base64",
-      "source_file": "package.json",
-      "source_location": "L14"
     },
     {
       "id": "package",
@@ -1122,6 +1124,17 @@
       "norm_label": "vite.config.ts",
       "source_file": "vite.config.ts",
       "source_location": "L1"
+    },
+    {
+      "id": "ref_js_base64",
+      "label": "js-base64",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "package.json",
+      "file_type": "concept",
+      "norm_label": "js-base64",
+      "source_file": "package.json",
+      "source_location": "L14"
     },
     {
       "id": "ref_tailwindcss",
@@ -1551,14 +1564,36 @@
       "source_location": "L1"
     },
     {
+      "id": "src_components_catmascot",
+      "label": "CatMascot.tsx",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "Dashboard/Dashboard.tsx",
+      "file_type": "code",
+      "norm_label": "catmascot.tsx",
+      "source_file": "src/components/CatMascot.tsx",
+      "source_location": "L1"
+    },
+    {
       "id": "src_components_rainbowcard",
       "label": "RainbowCard.tsx",
       "_origin": "ast",
       "community": 2,
-      "community_name": "IncomeFormCard.tsx",
+      "community_name": "Dashboard/Dashboard.tsx",
       "file_type": "code",
       "norm_label": "rainbowcard.tsx",
       "source_file": "src/components/RainbowCard.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_pages_dashboard_dashboard",
+      "label": "Dashboard/Dashboard.tsx",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "Dashboard/Dashboard.tsx",
+      "file_type": "code",
+      "norm_label": "dashboard/dashboard.tsx",
+      "source_file": "src/pages/Dashboard/Dashboard.tsx",
       "source_location": "L1"
     },
     {
@@ -1566,7 +1601,7 @@
       "label": "DailyIncomeList.tsx",
       "_origin": "ast",
       "community": 2,
-      "community_name": "IncomeFormCard.tsx",
+      "community_name": "Dashboard/Dashboard.tsx",
       "file_type": "code",
       "norm_label": "dailyincomelist.tsx",
       "source_file": "src/pages/Dashboard/sections/DailyIncomeList.tsx",
@@ -1577,7 +1612,7 @@
       "label": "IncomeCalendar.tsx",
       "_origin": "ast",
       "community": 2,
-      "community_name": "IncomeFormCard.tsx",
+      "community_name": "Dashboard/Dashboard.tsx",
       "file_type": "code",
       "norm_label": "incomecalendar.tsx",
       "source_file": "src/pages/Dashboard/sections/IncomeCalendar.tsx",
@@ -1588,7 +1623,7 @@
       "label": "RAINBOW_DOT_COLORS",
       "_origin": "ast",
       "community": 2,
-      "community_name": "IncomeFormCard.tsx",
+      "community_name": "Dashboard/Dashboard.tsx",
       "file_type": "code",
       "norm_label": "rainbow_dot_colors",
       "source_file": "src/pages/Dashboard/sections/IncomeCalendar.tsx",
@@ -1599,7 +1634,7 @@
       "label": "WEEKDAY_HEADERS",
       "_origin": "ast",
       "community": 2,
-      "community_name": "IncomeFormCard.tsx",
+      "community_name": "Dashboard/Dashboard.tsx",
       "file_type": "code",
       "norm_label": "weekday_headers",
       "source_file": "src/pages/Dashboard/sections/IncomeCalendar.tsx",
@@ -1610,7 +1645,7 @@
       "label": "IncomeFormCard.tsx",
       "_origin": "ast",
       "community": 2,
-      "community_name": "IncomeFormCard.tsx",
+      "community_name": "Dashboard/Dashboard.tsx",
       "file_type": "code",
       "norm_label": "incomeformcard.tsx",
       "source_file": "src/pages/Dashboard/sections/IncomeFormCard.tsx",
@@ -1621,7 +1656,7 @@
       "label": "QUICK_AMOUNTS",
       "_origin": "ast",
       "community": 2,
-      "community_name": "IncomeFormCard.tsx",
+      "community_name": "Dashboard/Dashboard.tsx",
       "file_type": "code",
       "norm_label": "quick_amounts",
       "source_file": "src/pages/Dashboard/sections/IncomeFormCard.tsx",
@@ -1632,18 +1667,29 @@
       "label": "QUICK_NOTE_TAGS",
       "_origin": "ast",
       "community": 2,
-      "community_name": "IncomeFormCard.tsx",
+      "community_name": "Dashboard/Dashboard.tsx",
       "file_type": "code",
       "norm_label": "quick_note_tags",
       "source_file": "src/pages/Dashboard/sections/IncomeFormCard.tsx",
       "source_location": "L24"
     },
     {
+      "id": "src_pages_dashboard_sections_mobilesummarybar",
+      "label": "MobileSummaryBar.tsx",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "Dashboard/Dashboard.tsx",
+      "file_type": "code",
+      "norm_label": "mobilesummarybar.tsx",
+      "source_file": "src/pages/Dashboard/sections/MobileSummaryBar.tsx",
+      "source_location": "L1"
+    },
+    {
       "id": "src_pages_dashboard_sections_monthlychartsection",
       "label": "MonthlyChartSection.tsx",
       "_origin": "ast",
       "community": 2,
-      "community_name": "IncomeFormCard.tsx",
+      "community_name": "Dashboard/Dashboard.tsx",
       "file_type": "code",
       "norm_label": "monthlychartsection.tsx",
       "source_file": "src/pages/Dashboard/sections/MonthlyChartSection.tsx",
@@ -1654,7 +1700,7 @@
       "label": "PASTEL_RAINBOW_COLORS",
       "_origin": "ast",
       "community": 2,
-      "community_name": "IncomeFormCard.tsx",
+      "community_name": "Dashboard/Dashboard.tsx",
       "file_type": "code",
       "norm_label": "pastel_rainbow_colors",
       "source_file": "src/pages/Dashboard/sections/MonthlyChartSection.tsx",
@@ -1665,7 +1711,7 @@
       "label": "SummaryCards.tsx",
       "_origin": "ast",
       "community": 2,
-      "community_name": "IncomeFormCard.tsx",
+      "community_name": "Dashboard/Dashboard.tsx",
       "file_type": "code",
       "norm_label": "summarycards.tsx",
       "source_file": "src/pages/Dashboard/sections/SummaryCards.tsx",
@@ -1676,7 +1722,7 @@
       "label": "expressionParser.ts",
       "_origin": "ast",
       "community": 2,
-      "community_name": "IncomeFormCard.tsx",
+      "community_name": "Dashboard/Dashboard.tsx",
       "file_type": "code",
       "norm_label": "expressionparser.ts",
       "source_file": "src/utils/expressionParser.ts",
@@ -1687,7 +1733,7 @@
       "label": "lucide-react",
       "_origin": "ast",
       "community": 2,
-      "community_name": "IncomeFormCard.tsx",
+      "community_name": "Dashboard/Dashboard.tsx",
       "file_type": "concept",
       "norm_label": "lucide-react",
       "source_file": "package.json",
@@ -1922,17 +1968,6 @@
       "file_type": "code",
       "norm_label": "index.ts",
       "source_file": "src/pages/Dashboard/index.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_pages_dashboard_sections_mobilesummarybar",
-      "label": "MobileSummaryBar.tsx",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "incomeMath.ts",
-      "file_type": "code",
-      "norm_label": "mobilesummarybar.tsx",
-      "source_file": "src/pages/Dashboard/sections/MobileSummaryBar.tsx",
       "source_location": "L1"
     },
     {
@@ -2415,17 +2450,6 @@
       "source_location": "L32"
     },
     {
-      "id": "src_components_catmascot",
-      "label": "CatMascot.tsx",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "CatMascot.tsx",
-      "file_type": "code",
-      "norm_label": "catmascot.tsx",
-      "source_file": "src/components/CatMascot.tsx",
-      "source_location": "L1"
-    },
-    {
       "id": "src_index",
       "label": "src_index",
       "_origin": "semantic",
@@ -2501,6 +2525,18 @@
     },
     {
       "source": "src_pages_dashboard_dashboard_dashboard",
+      "target": "src_utils_githubsync_pushincomestogithub",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/pages/Dashboard/Dashboard.tsx",
+      "source_location": "L106",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_dashboard_dashboard_dashboard",
       "target": "src_utils_githubsync_pullincomesfromgithub",
       "relation": "calls",
       "_origin": "ast",
@@ -2508,7 +2544,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L120",
+      "source_location": "L151",
       "weight": 1.0
     },
     {
@@ -2520,7 +2556,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L122",
+      "source_location": "L158",
       "weight": 1.0
     },
     {
@@ -2532,7 +2568,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L182",
+      "source_location": "L259",
       "weight": 1.0
     },
     {
@@ -2544,7 +2580,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L187",
+      "source_location": "L264",
       "weight": 1.0
     },
     {
@@ -2556,7 +2592,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L196",
+      "source_location": "L273",
       "weight": 1.0
     },
     {
@@ -2568,7 +2604,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L276",
+      "source_location": "L349",
       "weight": 1.0
     },
     {
@@ -2580,7 +2616,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L277",
+      "source_location": "L350",
       "weight": 1.0
     },
     {
@@ -2592,7 +2628,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L281",
+      "source_location": "L354",
       "weight": 1.0
     },
     {
@@ -2604,7 +2640,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L288",
+      "source_location": "L361",
       "weight": 1.0
     },
     {
@@ -2616,7 +2652,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L300",
+      "source_location": "L373",
       "weight": 1.0
     },
     {
@@ -2628,7 +2664,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L313",
+      "source_location": "L386",
       "weight": 1.0
     },
     {
@@ -2640,7 +2676,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L360",
+      "source_location": "L433",
       "weight": 1.0
     },
     {
@@ -2652,7 +2688,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L368",
+      "source_location": "L441",
       "weight": 1.0
     },
     {
@@ -2664,7 +2700,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L393",
+      "source_location": "L466",
       "weight": 1.0
     },
     {
@@ -2676,7 +2712,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L409",
+      "source_location": "L482",
       "weight": 1.0
     },
     {
@@ -2712,7 +2748,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L75",
+      "source_location": "L83",
       "weight": 1.0
     },
     {
@@ -2724,19 +2760,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L80",
-      "weight": 1.0
-    },
-    {
-      "source": "src_pages_dashboard_dashboard_dashboard",
-      "target": "src_utils_githubsync_pushincomestogithub",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/pages/Dashboard/Dashboard.tsx",
-      "source_location": "L95",
+      "source_location": "L88",
       "weight": 1.0
     },
     {
@@ -3016,6 +3040,102 @@
       "weight": 1.0
     },
     {
+      "source": "src_utils_githubsync_buildfreshgeturl",
+      "target": "src_utils_githubsync_buildcontentsurl",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/utils/githubSync.ts",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "src_utils_githubsync_fetchlatestfilesha",
+      "target": "src_utils_githubsync_formatgithuberror",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/utils/githubSync.ts",
+      "source_location": "L105",
+      "weight": 1.0
+    },
+    {
+      "source": "src_utils_githubsync_fetchlatestfilesha",
+      "target": "src_utils_githubsync_buildfreshgeturl",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/utils/githubSync.ts",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "src_utils_githubsync_fetchlatestfilesha",
+      "target": "src_utils_githubsync_buildheaders",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/utils/githubSync.ts",
+      "source_location": "L96",
+      "weight": 1.0
+    },
+    {
+      "source": "src_utils_githubsync_pullincomesfromgithub",
+      "target": "src_utils_githubsync_validategitconfig",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/utils/githubSync.ts",
+      "source_location": "L122",
+      "weight": 1.0
+    },
+    {
+      "source": "src_utils_githubsync_pullincomesfromgithub",
+      "target": "src_utils_githubsync_buildfreshgeturl",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/utils/githubSync.ts",
+      "source_location": "L124",
+      "weight": 1.0
+    },
+    {
+      "source": "src_utils_githubsync_pullincomesfromgithub",
+      "target": "src_utils_githubsync_buildheaders",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/utils/githubSync.ts",
+      "source_location": "L126",
+      "weight": 1.0
+    },
+    {
+      "source": "src_utils_githubsync_pullincomesfromgithub",
+      "target": "src_utils_githubsync_formatgithuberror",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/utils/githubSync.ts",
+      "source_location": "L135",
+      "weight": 1.0
+    },
+    {
       "source": "src_utils_githubsync_pullincomesfromgithub",
       "target": "src_utils_storage_normalizeincomedata",
       "relation": "calls",
@@ -3024,55 +3144,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/utils/githubSync.ts",
-      "source_location": "L112",
-      "weight": 1.0
-    },
-    {
-      "source": "src_utils_githubsync_pullincomesfromgithub",
-      "target": "src_utils_githubsync_validategitconfig",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/utils/githubSync.ts",
-      "source_location": "L85",
-      "weight": 1.0
-    },
-    {
-      "source": "src_utils_githubsync_pullincomesfromgithub",
-      "target": "src_utils_githubsync_buildcontentsurl",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/utils/githubSync.ts",
-      "source_location": "L87",
-      "weight": 1.0
-    },
-    {
-      "source": "src_utils_githubsync_pullincomesfromgithub",
-      "target": "src_utils_githubsync_buildheaders",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/utils/githubSync.ts",
-      "source_location": "L90",
-      "weight": 1.0
-    },
-    {
-      "source": "src_utils_githubsync_pullincomesfromgithub",
-      "target": "src_utils_githubsync_formatgithuberror",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/utils/githubSync.ts",
-      "source_location": "L98",
+      "source_location": "L149",
       "weight": 1.0
     },
     {
@@ -3084,7 +3156,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/utils/githubSync.ts",
-      "source_location": "L129",
+      "source_location": "L167",
       "weight": 1.0
     },
     {
@@ -3096,7 +3168,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/utils/githubSync.ts",
-      "source_location": "L131",
+      "source_location": "L169",
       "weight": 1.0
     },
     {
@@ -3108,7 +3180,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/utils/githubSync.ts",
-      "source_location": "L132",
+      "source_location": "L170",
+      "weight": 1.0
+    },
+    {
+      "source": "src_utils_githubsync_pushincomestogithub",
+      "target": "src_utils_githubsync_fetchlatestfilesha",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/utils/githubSync.ts",
+      "source_location": "L182",
       "weight": 1.0
     },
     {
@@ -3120,7 +3204,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/utils/githubSync.ts",
-      "source_location": "L148",
+      "source_location": "L213",
       "weight": 1.0
     },
     {
@@ -6469,13 +6553,13 @@
     },
     {
       "source": "src_utils_githubsync",
-      "target": "src_utils_githubsync_pushincomestogithub",
+      "target": "src_utils_githubsync_pullincomesfromgithub",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/utils/githubSync.ts",
-      "source_location": "L125",
+      "source_location": "L119",
       "weight": 1.0
     },
     {
@@ -6491,13 +6575,24 @@
     },
     {
       "source": "src_utils_githubsync",
+      "target": "src_utils_githubsync_pushincomestogithub",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/utils/githubSync.ts",
+      "source_location": "L163",
+      "weight": 1.0
+    },
+    {
+      "source": "src_utils_githubsync",
       "target": "src_utils_githubsync_formatgithuberror",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/utils/githubSync.ts",
-      "source_location": "L192",
+      "source_location": "L225",
       "weight": 1.0
     },
     {
@@ -6524,13 +6619,24 @@
     },
     {
       "source": "src_utils_githubsync",
-      "target": "src_utils_githubsync_buildheaders",
+      "target": "src_utils_githubsync_buildfreshgeturl",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/utils/githubSync.ts",
       "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "src_utils_githubsync",
+      "target": "src_utils_githubsync_buildheaders",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/utils/githubSync.ts",
+      "source_location": "L78",
       "weight": 1.0
     },
     {
@@ -6546,13 +6652,13 @@
     },
     {
       "source": "src_utils_githubsync",
-      "target": "src_utils_githubsync_pullincomesfromgithub",
+      "target": "src_utils_githubsync_fetchlatestfilesha",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/utils/githubSync.ts",
-      "source_location": "L82",
+      "source_location": "L93",
       "weight": 1.0
     },
     {
@@ -7162,5 +7268,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "2bdab0080fe391d81ea714c713c546aa0a29d371"
+  "built_at_commit": "b0a3de8d701de4ef4380dbe30f5548578f7c7d8c"
 }

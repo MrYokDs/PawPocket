@@ -1,5 +1,5 @@
 /** Route: / */
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import dayjs from 'dayjs';
 import {
   CalendarDays,
@@ -62,6 +62,14 @@ export default function Dashboard() {
   const [mobileListView, setMobileListView] = useState<'calendar' | 'table'>('table');
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
+  /** เก็บ sha ล่าสุดที่ซิงค์กับ GitHub และล็อกป้องกันการซิงค์ซ้อนกัน */
+  const lastSyncedShaRef = useRef<string | null>(null);
+  const syncInFlightRef = useRef(false);
+
+  const isGitConfigured = Boolean(
+    gitConfig.owner.trim() && gitConfig.repo.trim() && gitConfig.token.trim()
+  );
+
   /** แสดงแถบแจ้งเตือนสั้นๆ ด้านบนหน้าจอ */
   const showToast = useCallback((message: string) => {
     setToastMessage(message);
@@ -86,13 +94,19 @@ export default function Dashboard() {
   /** ส่งข้อมูลขึ้น GitHub (Push) */
   const handlePushToGit = useCallback(
     async (configToUse: GitSyncConfig, entriesToPush?: IncomeMap) => {
+      if (syncInFlightRef.current) return;
+      syncInFlightRef.current = true;
+
       const targetEntries = entriesToPush ?? entries;
       setSyncStatus({
         state: 'syncing',
         message: 'กำลังบันทึกข้อมูลขึ้น GitHub...',
       });
       try {
-        await pushIncomesToGitHub(configToUse, targetEntries);
+        const result = await pushIncomesToGitHub(configToUse, targetEntries);
+        if (result.sha) {
+          lastSyncedShaRef.current = result.sha;
+        }
         const nowIso = new Date().toISOString();
         setSyncStatus({
           state: 'success',
@@ -104,37 +118,100 @@ export default function Dashboard() {
         const message =
           error instanceof Error ? error.message : 'ไม่สามารถส่งข้อมูลขึ้น GitHub ได้';
         setSyncStatus({ state: 'error', message });
+      } finally {
+        syncInFlightRef.current = false;
       }
     },
     [entries, showToast]
   );
 
-  /** ดึงข้อมูลจาก GitHub (Pull) มาอัปเดตลง LocalStorage */
+  /**
+   * ดึงข้อมูลจาก GitHub (Pull) มาอัปเดตลง LocalStorage
+   * รองรับโหมดเบื้องหลัง (silent) สำหรับเช็คอัตโนมัติตอนเปิดเว็บและทุก 1 นาที
+   */
   const handlePullFromGit = useCallback(
-    async (configToUse: GitSyncConfig) => {
-      setSyncStatus({
-        state: 'syncing',
-        message: 'กำลังดึงข้อมูลจาก GitHub...',
-      });
+    async (
+      configToUse: GitSyncConfig,
+      options?: { silent?: boolean; forceApply?: boolean }
+    ) => {
+      if (syncInFlightRef.current) return;
+      syncInFlightRef.current = true;
+
+      const isSilent = Boolean(options?.silent);
+      const shouldForceApply = Boolean(options?.forceApply);
+
+      if (!isSilent) {
+        setSyncStatus({
+          state: 'syncing',
+          message: 'กำลังดึงข้อมูลจาก GitHub...',
+        });
+      }
+
       try {
-        const { entries: pulledEntries } = await pullIncomesFromGitHub(configToUse);
-        setEntries(pulledEntries);
-        saveIncomeEntries(pulledEntries);
+        const { entries: pulledEntries, sha } = await pullIncomesFromGitHub(configToUse);
+        const hasRemoteChanged = sha !== null && sha !== lastSyncedShaRef.current;
+
+        // อัปเดตข้อมูลในเครื่องเมื่อไฟล์บน GitHub มีอยู่จริงและมีการเปลี่ยนแปลง (หรือผู้ใช้กดดึงเอง)
+        if (sha !== null && (shouldForceApply || hasRemoteChanged)) {
+          lastSyncedShaRef.current = sha;
+          setEntries(pulledEntries);
+          saveIncomeEntries(pulledEntries);
+        } else if (!isSilent && sha === null) {
+          lastSyncedShaRef.current = null;
+        }
+
         const nowIso = new Date().toISOString();
         setSyncStatus({
           state: 'success',
-          message: `ดึงข้อมูลจาก GitHub สำเร็จ (${Object.keys(pulledEntries).length} วัน)`,
+          message: `ซิงค์ล่าสุดเมื่อ ${dayjs(nowIso).format('HH:mm:ss')} (${Object.keys(pulledEntries).length} วัน)`,
           lastSyncedAt: nowIso,
         });
-        showToast('ดึงข้อมูลจาก GitHub เรียบร้อยแล้วเมี้ยว! 🐾');
+
+        if (!isSilent) {
+          showToast('ดึงข้อมูลจาก GitHub เรียบร้อยแล้วเมี้ยว! 🐾');
+        } else if (hasRemoteChanged) {
+          showToast('อัปเดตข้อมูลล่าสุดจาก GitHub แล้วเมี้ยว! 🐾');
+        }
       } catch (error) {
-        const message =
-          error instanceof Error ? error.message : 'ไม่สามารถดึงข้อมูลจาก GitHub ได้';
-        setSyncStatus({ state: 'error', message });
+        if (!isSilent) {
+          const message =
+            error instanceof Error ? error.message : 'ไม่สามารถดึงข้อมูลจาก GitHub ได้';
+          setSyncStatus({ state: 'error', message });
+        }
+      } finally {
+        syncInFlightRef.current = false;
       }
     },
     [showToast]
   );
+
+  const gitConfigRef = useRef(gitConfig);
+  gitConfigRef.current = gitConfig;
+
+  /** เช็คและดึงข้อมูลล่าสุดอัตโนมัติทันทีที่เปิดเว็บ และเช็คซ้ำทุก 1 นาทีขณะที่เปิดหน้าเว็บอยู่ */
+  useEffect(() => {
+    if (!isGitConfigured) return;
+
+    // ดึงข้อมูลล่าสุดทันทีเมื่อเปิดเว็บ
+    void handlePullFromGit(gitConfigRef.current, {
+      silent: true,
+      forceApply: true,
+    });
+
+    // ยิงเช็คอัปเดตทุกๆ 1 นาที (เฉพาะตอนที่หน้าเว็บเปิดอยู่และไม่ได้เปิดหน้าตั้งค่า)
+    const intervalId = window.setInterval(() => {
+      if (document.visibilityState === 'visible') {
+        void handlePullFromGit(gitConfigRef.current, {
+          silent: true,
+          forceApply: false,
+        });
+      }
+    }, 60_000);
+
+    return () => {
+      window.clearInterval(intervalId);
+    };
+  }, [isGitConfigured, handlePullFromGit]);
 
   /** เลือกวันที่และซิงค์เดือนบนปฏิทินให้ตรงกัน */
   const handleSelectDate = useCallback((dateStr: string) => {
@@ -212,10 +289,6 @@ export default function Dashboard() {
       }
     },
     [entries, showToast]
-  );
-
-  const isGitConfigured = Boolean(
-    gitConfig.owner.trim() && gitConfig.repo.trim() && gitConfig.token.trim()
   );
 
   return (
@@ -412,7 +485,9 @@ export default function Dashboard() {
         config={gitConfig}
         syncStatus={syncStatus}
         onSaveConfig={handleSaveGitConfig}
-        onPullFromGit={handlePullFromGit}
+        onPullFromGit={(cfg) =>
+          handlePullFromGit(cfg, { silent: false, forceApply: true })
+        }
         onPushToGit={(cfg) => handlePushToGit(cfg)}
         onExportJson={handleExportJson}
         onImportJson={handleImportJson}

@@ -58,6 +58,18 @@ function buildContentsUrl(config: GitSyncConfig): string {
 }
 
 /**
+ * สร้าง URL สำหรับ GET พร้อมพารามิเตอร์ป้องกันแคชจากเบราว์เซอร์ (แก้ปัญหาได้ sha เก่าจนติด 409)
+ *
+ * @param config การตั้งค่า GitHub Sync
+ * @returns URL สำหรับดึงข้อมูลล่าสุดจาก GitHub โดยไม่ติดแคช
+ */
+function buildFreshGetUrl(config: GitSyncConfig): string {
+  const baseUrl = buildContentsUrl(config);
+  const ref = encodeURIComponent(config.branch.trim());
+  return `${baseUrl}?ref=${ref}&_t=${Date.now()}`;
+}
+
+/**
  * สร้าง HTTP Headers สำหรับเรียก GitHub REST API
  *
  * @param token GitHub Personal Access Token
@@ -73,21 +85,46 @@ function buildHeaders(token: string): HeadersInit {
 }
 
 /**
- * ดึงข้อมูลไฟล์รายได้จาก GitHub Repository (Pull)
+ * ดึงค่า sha ล่าสุดของไฟล์บน GitHub โดยไม่ใช้แคชของเบราว์เซอร์
+ *
+ * @param config การตั้งค่า GitHub Sync
+ * @returns ค่า sha ล่าสุด หรือ undefined หากยังไม่มีไฟล์บน GitHub
+ */
+async function fetchLatestFileSha(config: GitSyncConfig): Promise<string | undefined> {
+  const checkResponse = await fetch(buildFreshGetUrl(config), {
+    method: 'GET',
+    headers: buildHeaders(config.token),
+    cache: 'no-store',
+  });
+
+  if (checkResponse.status === 404) {
+    return undefined;
+  }
+
+  if (!checkResponse.ok) {
+    throw new Error(await formatGitHubError(checkResponse));
+  }
+
+  const existingData = (await checkResponse.json()) as GitHubContentResponse;
+  return existingData.sha;
+}
+
+/**
+ * ดึงข้อมูลไฟล์รายได้ล่าสุดจาก GitHub Repository (Pull) โดยไม่ติดแคช
  * ใช้ js-base64 ถอดรหัสเพื่อรองรับภาษาไทย UTF-8 100%
  *
  * @param config การตั้งค่า GitHub Sync
- * @returns ข้อมูลรายได้และค่า sha ของไฟล์บน GitHub
+ * @returns ข้อมูลรายได้และค่า sha ล่าสุดของไฟล์บน GitHub
  */
 export async function pullIncomesFromGitHub(
   config: GitSyncConfig
 ): Promise<{ entries: IncomeMap; sha: string | null }> {
   validateGitConfig(config);
 
-  const url = `${buildContentsUrl(config)}?ref=${encodeURIComponent(config.branch.trim())}`;
-  const response = await fetch(url, {
+  const response = await fetch(buildFreshGetUrl(config), {
     method: 'GET',
     headers: buildHeaders(config.token),
+    cache: 'no-store',
   });
 
   if (response.status === 404) {
@@ -116,6 +153,7 @@ export async function pullIncomesFromGitHub(
 
 /**
  * บันทึกข้อมูลรายได้ทั้งหมดขึ้น GitHub Repository (Push)
+ * ดึง sha สดใหม่ทุกครั้งโดยไม่ใช้แคช และลองใหม่อัตโนมัติ 1 ครั้งหากชน 409
  * ใช้ js-base64 เข้ารหัสเพื่อรองรับภาษาไทย UTF-8 100%
  *
  * @param config การตั้งค่า GitHub Sync
@@ -131,23 +169,6 @@ export async function pushIncomesToGitHub(
   const url = buildContentsUrl(config);
   const headers = buildHeaders(config.token);
 
-  // ดึง sha ล่าสุดก่อนเพื่อป้องกัน Conflict ตอนอัปเดตไฟล์เดิม
-  let existingSha: string | undefined;
-  const checkResponse = await fetch(
-    `${url}?ref=${encodeURIComponent(config.branch.trim())}`,
-    {
-      method: 'GET',
-      headers,
-    }
-  );
-
-  if (checkResponse.ok) {
-    const existingData = (await checkResponse.json()) as GitHubContentResponse;
-    existingSha = existingData.sha;
-  } else if (checkResponse.status !== 404) {
-    throw new Error(await formatGitHubError(checkResponse));
-  }
-
   const payload = {
     app: 'PawPocket',
     updatedAt: new Date().toISOString(),
@@ -156,31 +177,43 @@ export async function pushIncomesToGitHub(
   const jsonString = JSON.stringify(payload, null, 2);
   const encodedContent = Base64.encode(jsonString);
 
-  const body: Record<string, string> = {
-    message: `อัปเดตข้อมูลรายได้ PawPocket (${Object.keys(entries).length} วัน)`,
-    content: encodedContent,
-    branch: config.branch.trim(),
-  };
+  // ลองส่งสูงสุด 2 รอบ (หากรอบแรกชน 409 จากจังหวะอัปเดตของ GitHub จะดึง sha ล่าสุดแล้วลองใหม่ทันที)
+  for (let attempt = 0; attempt < 2; attempt += 1) {
+    const existingSha = await fetchLatestFileSha(config);
 
-  if (existingSha) {
-    body.sha = existingSha;
-  }
+    const body: Record<string, string> = {
+      message: `อัปเดตข้อมูลรายได้ PawPocket (${Object.keys(entries).length} วัน)`,
+      content: encodedContent,
+      branch: config.branch.trim(),
+    };
 
-  const putResponse = await fetch(url, {
-    method: 'PUT',
-    headers,
-    body: JSON.stringify(body),
-  });
+    if (existingSha) {
+      body.sha = existingSha;
+    }
 
-  if (!putResponse.ok) {
+    const putResponse = await fetch(url, {
+      method: 'PUT',
+      headers,
+      body: JSON.stringify(body),
+      cache: 'no-store',
+    });
+
+    if (putResponse.ok) {
+      const result = (await putResponse.json()) as GitHubPutResponse;
+      return {
+        sha: result.content?.sha ?? '',
+        commitUrl: result.commit?.html_url,
+      };
+    }
+
+    if (putResponse.status === 409 && attempt === 0) {
+      continue;
+    }
+
     throw new Error(await formatGitHubError(putResponse));
   }
 
-  const result = (await putResponse.json()) as GitHubPutResponse;
-  return {
-    sha: result.content?.sha ?? '',
-    commitUrl: result.commit?.html_url,
-  };
+  throw new Error('ไฟล์บน GitHub มีการเปลี่ยนแปลง กรุณาลองกดซิงค์ใหม่อีกครั้ง');
 }
 
 /**
@@ -212,4 +245,3 @@ async function formatGitHubError(response: Response): Promise<string> {
     return `GitHub API ผิดพลาด (${response.status})`;
   }
 }
-
