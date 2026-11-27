@@ -1,6 +1,6 @@
 {
   "app": "PawPocket",
-  "updatedAt": "2026-11-26T15:03:48.595Z",
+  "updatedAt": "2026-11-27T10:43:30.318Z",
   "entries": {
     "2026-11-01": {
       "date": "2026-11-01",
@@ -134,6 +134,13 @@
       "totalAmount": 150,
       "note": "OT",
       "updatedAt": "2026-11-26T15:00:00.000Z"
+    },
+    "2026-11-27": {
+      "date": "2026-11-27",
+      "expression": "225",
+      "totalAmount": 225,
+      "note": "OT",
+      "updatedAt": "2026-11-27T10:43:29.064Z"
     }
   }
 }
